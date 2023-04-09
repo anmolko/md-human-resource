@@ -3,7 +3,7 @@
 @section('css')
 @endsection
 @section('seo')
-    <title>{{ucfirst(@$singleJob->name)}} | @if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else Omama Manpower pvt ltd @endif</title>
+    <title>{{ucfirst(@$singleJob->name)}} | @if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource @endif</title>
     <meta name='description' itemprop='description'  content='{{ucfirst(@$singleJob->meta_description)}}' />
     <meta name='keywords' content='{{ucfirst(@$singleJob->meta_tags)}}' />
     <meta property='article:published_time' content='<?php if(@$singleJob->updated_at !=''){?>{{@$singleJob->updated_at}} <?php }else {?> {{@$singleJob->created_at}} <?php }?>' />
@@ -14,7 +14,7 @@
     <meta property="og:type" content="Coperation" />
     <meta property="og:locale" content="en-us" />
     <meta property="og:locale:alternate"  content="en-us" />
-    <meta property="og:site_name" content="@if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else Omama Manpower pvt ltd @endif" />
+    <meta property="og:site_name" content="@if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource@endif" />
     <meta property="og:image" content="<?php if(@$singleJob->image){?>{{asset('/images/job/'.@$singleJob->image)}}<?php }?>" />
     <meta property="og:image:url" content="<?php if(@$singleJob->image){?>{{asset('/images/job/'.@$singleJob->image)}}<?php }?>" />
     <meta property="og:image:size" content="300" />

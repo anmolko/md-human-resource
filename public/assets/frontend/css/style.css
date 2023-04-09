@@ -58,14 +58,14 @@ font-family: 'Merriweather', serif;*/
 @import url('jquery.fancybox.min.css');
 @import url('jquery.mCustomScrollbar.min.css');
 
-/*** 
+/***
 
 ====================================================================
 	Reset
 ====================================================================
 
  ***/
- 
+
 * {
 	margin:0px;
 	padding:0px;
@@ -73,7 +73,7 @@ font-family: 'Merriweather', serif;*/
 	outline:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Global Settings
@@ -118,7 +118,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 input,button,select,textarea{
-	
+
 }
 
 textarea{
@@ -127,7 +127,7 @@ textarea{
 
 p{
 	position:relative;
-	line-height:1.8em;	
+	line-height:1.8em;
 }
 
 .auto-container{
@@ -151,7 +151,7 @@ p{
 ul,li{
 	list-style:none;
 	padding:0px;
-	margin:0px;	
+	margin:0px;
 }
 
 img{
@@ -169,7 +169,7 @@ img{
 }
 
 .centered{
-	text-align:center;	
+	text-align:center;
 }
 
 /*List Style One*/
@@ -231,7 +231,7 @@ img{
 	top:0px;
 	font-weight: 700;
 	font-size: 14px;
-	color: #443986;
+	color: #021529;
 	font-family: "Flaticon";
 }
 
@@ -374,13 +374,13 @@ img{
 	position:relative;
 	padding:13px 32px 13px;
 	line-height:24px;
-	background:#443986;
+	background:#021529;
 	color:#ffffff;
 	font-size:16px;
 	font-weight:600;
 	border-radius: 3px;
 	letter-spacing: 1px;
-	border:2px solid #443986;
+	border:2px solid #021529;
 	text-transform:capitalize;
 	font-family: 'Poppins', sans-serif;
 }
@@ -426,10 +426,10 @@ img{
 img{
 	display:inline-block;
 	max-width:100%;
-	height:auto;	
+	height:auto;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Scroll To Top style
@@ -457,7 +457,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;		
+	transition:all 300ms ease;
 }
 
 .scroll-to-top:hover{
@@ -465,7 +465,7 @@ img{
 	background:#ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Section Title
@@ -480,7 +480,7 @@ img{
 
 .sec-title h2{
 	position:relative;
-	color:#443986;
+	color:#021529;
 	font-size:48px;
 	font-weight:600;
 	line-height:1.3em;
@@ -506,7 +506,7 @@ img{
 	text-align: center;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Header style
@@ -556,7 +556,7 @@ img{
 
 .header-top .top-left .header-info-list li .icon{
 	position:relative;
-	color:#443986;
+	color:#021529;
 	font-size: 18px;
 	margin-right: 8px;
 	display:inline-block;
@@ -588,13 +588,13 @@ img{
 
 .header-top .top-right .social-box li a{
 	position: relative;
-	color: #443986;
+	color: #021529;
 	font-size: 16px;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .header-top .top-right .social-box li a:hover{
@@ -655,7 +655,7 @@ img{
 }
 
 .header-top-two .top-right .quote-btn:hover{
-	background-color: #443986;
+	background-color: #021529;
 }
 
 /*Header Top Three*/
@@ -693,7 +693,7 @@ img{
 
 .header-top-three .top-left .header-info-list li .icon{
 	position:relative;
-	color:#443986;
+	color:#021529;
 	font-size: 18px;
 	margin-right: 10px;
 	display:inline-block;
@@ -720,13 +720,13 @@ img{
 
 .header-top-three .top-right .social-box li a{
 	position: relative;
-	color: #443986;
+	color: #021529;
 	font-size: 16px;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .header-top-three .top-right .social-box li a:hover{
@@ -767,7 +767,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .main-header .nav-toggler{
@@ -864,7 +864,7 @@ img{
 	top:67px !important;
 	right:0px;
 	padding:0px;
-	width:280px;	
+	width:280px;
 	left: auto !important;
 	border-radius:0px;
 	border-top:3px solid #ee2d50;
@@ -879,12 +879,12 @@ img{
 }
 
 .main-header .header-upper .search-panel .form-container{
-	padding:25px 20px;	
+	padding:25px 20px;
 }
 
 .main-header .header-upper .search-panel .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .main-header .header-upper .search-panel input[type="text"],
@@ -896,7 +896,7 @@ img{
 	height:40px;
 	color:#000000;
 	line-height:24px;
-	background:#ffffff;	
+	background:#ffffff;
 	border:1px solid #e0e0e0;
 	padding:7px 40px 7px 15px;
 	-webkit-transition:all 300ms ease;
@@ -908,7 +908,7 @@ img{
 
 .main-header .header-upper .search-panel input:focus,
 .main-header .header-upper .search-panel select:focus{
-	border-color:#ee2d50;	
+	border-color:#ee2d50;
 }
 
 .main-header .header-upper .search-panel .search-btn{
@@ -967,7 +967,7 @@ img{
 
 .main-header .header-upper .support-box .support-number{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 20px;
 	font-weight: 700;
 	text-align: right;
@@ -1070,7 +1070,7 @@ img{
 }
 
 .header-style-two{
-	background-color: #443986;
+	background-color: #021529;
 }
 
 /*Sticky Header*/
@@ -1120,7 +1120,7 @@ img{
 	-moz-animation-iteration-count: 1;
 	-op-animation-iteration-count: 1;
 	-webkit-animation-iteration-count: 1;
-	animation-iteration-count: 1;	
+	animation-iteration-count: 1;
 }
 
 .main-menu .navigation > li > a{
@@ -1200,7 +1200,7 @@ img{
 
 .main-menu .navigation > li > ul.from-right{
 	left:auto;
-	right:0px;	
+	right:0px;
 }
 
 .main-menu .navigation > li > ul > li{
@@ -1256,7 +1256,7 @@ img{
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li.dropdown:hover > a:after{
@@ -1288,7 +1288,7 @@ img{
 
 .main-menu .navigation > li > ul > li > ul.from-right{
 	left:auto;
-	right:0px;	
+	right:0px;
 }
 
 .main-menu .navigation > li > ul > li > ul > li{
@@ -1299,7 +1299,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > ul > li > a{
@@ -1337,11 +1337,11 @@ img{
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li > ul > li.dropdown:hover > a:after{
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 .main-menu .navigation > li.dropdown:hover > ul{
@@ -1373,7 +1373,7 @@ img{
 	display:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Slider Banner
@@ -1688,7 +1688,7 @@ img{
 	color:#ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section
@@ -1747,11 +1747,11 @@ img{
 
 .services-block:hover .inner-box:before{
 	bottom:-40px;
-	background: #443986;	
+	background: #021529;
 }
 
 .services-block.alternate:hover .inner-box:before{
-	background: #ee2d50;	
+	background: #ee2d50;
 }
 
 .services-block:hover{
@@ -1806,14 +1806,14 @@ img{
 }
 
 .services-block .inner-box:hover .text{
-	
+
 }
 
 .services-block .inner-box .more-link{
 	position:relative;
 	display:block;
 	margin-right:-45px;
-	overflow:hidden;	
+	overflow:hidden;
 }
 
 .services-block .inner-box .read-more{
@@ -1834,7 +1834,7 @@ img{
 }
 
 .services-block .inner-box .read-more .fa{
-	padding-right:5px;	
+	padding-right:5px;
 }
 
 .services-block .inner-box .read-more:after{
@@ -1860,7 +1860,7 @@ img{
 }
 
 .services-block .inner-box:hover{
-	background-color: #443986;
+	background-color: #021529;
 }
 
 .services-block .inner-box:hover .text,
@@ -1870,7 +1870,7 @@ img{
 }
 
 .services-block.alternate .inner-box .icon-box{
-	color:#443986;
+	color:#021529;
 }
 
 .services-block.alternate .inner-box:hover{
@@ -1882,7 +1882,7 @@ img{
 	color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	About Section
@@ -1997,7 +1997,7 @@ img{
 	-o-transition:rotate(360deg);
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fluid Section Two
@@ -2023,12 +2023,12 @@ img{
 	height:100%;
 	background-repeat:no-repeat;
 	background-position:center center;
-	background-size:cover;	
+	background-size:cover;
 }
 
 .fluid-section-one .image-column .image-box{
 	position:relative;
-	display:none;	
+	display:none;
 }
 
 .fluid-section-one .image-column .image-box img{
@@ -2068,7 +2068,7 @@ img{
 
 .fluid-section-one .content-column .inner-column .title-box h2{
 	position: relative;
-    color: #443986;
+    color: #021529;
     font-size: 48px;
     font-weight: 600;
     line-height: 1.3em;
@@ -2153,7 +2153,7 @@ img{
 	font-weight: 400;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Offer Section
@@ -2271,13 +2271,13 @@ img{
 
 .offer-block .inner-box .lower-content .read-more .fa{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-weight: 700;
 	margin-right: 4px;
 	display: inline-block;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Counter Section
@@ -2350,7 +2350,7 @@ img{
 .fact-counter .column .inner .count-outer{
 	position:relative;
 	font-weight:700;
-	color:#443986;
+	color:#021529;
 	font-size:42px;
 	line-height:1em;
 	display:inline-block;
@@ -2365,7 +2365,7 @@ img{
 .fact-counter .count-outer .count-text{
 	position:relative;
 	font-weight:700;
-	color:#443986;
+	color:#021529;
 	font-size:42px;
 	line-height:1em;
 	font-family: 'Poppins', sans-serif;
@@ -2384,7 +2384,7 @@ img{
 	border-color:#f47629;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Case Section
@@ -2571,7 +2571,7 @@ img{
 
 .case-block .inner-box .lower-box .category{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 13px;
 	font-weight: 700;
 	margin-bottom: 5px;
@@ -2609,7 +2609,7 @@ img{
 	color:#ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Testimonial Section
@@ -2737,7 +2737,7 @@ img{
 	width:auto;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fluid Section Two
@@ -2752,7 +2752,7 @@ img{
 .fluid-section-two .outer-container{
 	position:relative;
 	min-height:250px;
-	background-color:#443986;
+	background-color:#021529;
 }
 
 .fluid-section-two .image-column{
@@ -2763,12 +2763,12 @@ img{
 	height:100%;
 	background-repeat:no-repeat;
 	background-position:center center;
-	background-size:cover;	
+	background-size:cover;
 }
 
 .fluid-section-two .image-column .image-box{
 	position:relative;
-	display:none;	
+	display:none;
 }
 
 .fluid-section-two .image-column .image-box img{
@@ -2790,7 +2790,7 @@ img{
 	padding:100px 15px 100px 100px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Consult Form
@@ -2803,7 +2803,7 @@ img{
 }
 
 .support-form .row{
-	
+
 }
 
 .support-form .row .column{
@@ -2906,7 +2906,7 @@ img{
 	position:relative;
 	top:2px;
 	text-indent:0px;
-	color:#333333;	
+	color:#333333;
 }
 
 .form-group .ui-button .ui-icon:before{
@@ -2937,7 +2937,7 @@ img{
 }
 
 .ui-menu .ui-menu-item:last-child{
-	border:none;	
+	border:none;
 }
 
 .ui-state-active, .ui-widget-content .ui-state-active{
@@ -2957,7 +2957,7 @@ img{
 	background-color:#ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	News Section
@@ -3009,7 +3009,7 @@ img{
 
 .news-block .inner-box .post-info li{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 13px;
 	font-weight: 700;
 	padding-right: 14px;
@@ -3017,7 +3017,7 @@ img{
 	line-height: 1.2em;
 	display: inline-block;
 	text-transform: uppercase;
-	border-right: 1px solid #443986;
+	border-right: 1px solid #021529;
 }
 
 .news-block .inner-box .post-info li:last-child{
@@ -3081,7 +3081,7 @@ img{
 	display: block;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Call To Action Section
@@ -3160,7 +3160,7 @@ img{
 }
 
 
-/*** 
+/***
 
 ====================================================================
 	Main Footer
@@ -3372,14 +3372,14 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .main-footer .newsletter-widget .form-group button{
 	width:100%;
 	cursor: pointer;
-	border-color:#443986;
-	background-color: #443986;
+	border-color:#021529;
+	background-color: #021529;
 	text-transform: uppercase;
 }
 
@@ -3423,14 +3423,14 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .main-footer .footer-bottom .footer-nav li a:hover{
 	color:#ffffff;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Business Section
@@ -3487,11 +3487,11 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .business-section .title-column .inner-column .we-do:hover{
-	color:#443986;
+	color:#021529;
 }
 
 .business-section .title-column .inner-column .we-do:before{
@@ -3499,7 +3499,7 @@ img{
 	content: "\f105";
 	left: 0px;
 	top: -2px;
-	color:#443986;
+	color:#021529;
 	font-family: 'FontAwesome';
 }
 
@@ -3534,7 +3534,7 @@ img{
 
 .feature-block .inner-box .icon-box{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 70px;
 	line-height: 1em;
 	margin-bottom: 15px;
@@ -3542,7 +3542,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .feature-block.alternate .inner-box .icon-box{
@@ -3571,7 +3571,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .feature-block .inner-box h3 a:hover{
@@ -3585,7 +3585,7 @@ img{
 	line-height: 1.8em;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fluid Section Three
@@ -3748,7 +3748,7 @@ img{
 	top: 12px;
 	width:35px;
 	height: 1px;
-	background-color: #443986;
+	background-color: #021529;
 }
 
 .feature-block-two .inner-box h3 a{
@@ -3758,7 +3758,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .feature-block-two .inner-box h3 a:hover{
@@ -3798,7 +3798,7 @@ img{
 	background-color: #ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Beyong Section
@@ -3926,7 +3926,7 @@ img{
 
 .beyong-section .beyong-tabs .tab-btns .tab-btn.active-btn,
 .beyong-section .beyong-tabs .tab-btns .tab-btn:hover{
-	color: #443986;
+	color: #021529;
 }
 
 .beyong-section .beyong-tabs .tab-btns .tab-btn:hover::before,
@@ -3995,7 +3995,7 @@ img{
 
 .beyong-section .beyong-tabs .tabs-content .content-column h2{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 36px;
 	font-weight: 600;
 	line-height: 1.4em;
@@ -4026,18 +4026,18 @@ img{
 }
 
 .beyong-section .beyong-tabs .tabs-content .content-column .read-more:hover{
-	color:#443986;
+	color:#021529;
 }
 
 .beyong-section .beyong-tabs .tabs-content .content-column .read-more .fa{
 	position: relative;
 	margin-right: 4px;
-	color:#443986;
+	color:#021529;
 	font-size: 14px;
 	font-weight: 700;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Call To Action Two
@@ -4082,7 +4082,7 @@ img{
 	margin-bottom: 40px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	News Section Two
@@ -4138,7 +4138,7 @@ img{
 }
 
 .news-block-two .inner-box .image-column .image .arrow-box:hover{
-	background-color: #443986;
+	background-color: #021529;
 }
 
 .news-block-two .inner-box .image-column .image img{
@@ -4178,7 +4178,7 @@ img{
 
 .news-block-two .inner-box .content-column .inner-column h3 a{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -4197,7 +4197,7 @@ img{
 	line-height: 1.7em;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Featured Section
@@ -4255,8 +4255,8 @@ img{
 }
 
 .feature-block-three.blue .inner-box{
-	background-color: #443986;
-	border-color: #443986;
+	background-color: #021529;
+	border-color: #021529;
 }
 
 .feature-block-three.blue .inner-box h3 a,
@@ -4297,7 +4297,7 @@ img{
 	display:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Testimonial Section Two
@@ -4394,7 +4394,7 @@ img{
 	background-color:#ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Newsletter Section
@@ -4413,7 +4413,7 @@ img{
 	top: 0px;
 	width: 50%;
 	height: 100%;
-	background-color: #443986;
+	background-color: #021529;
 }
 
 .newsletter-section:after{
@@ -4498,7 +4498,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .newsletter-section .right-column .subscribe-form .form-group input::-webkit-input-placeholder{
@@ -4518,7 +4518,7 @@ img{
 	text-transform:uppercase;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Planning Section
@@ -4543,10 +4543,10 @@ img{
 }
 
 .planning-section .sec-title{
-	margin-bottom:80px;	
+	margin-bottom:80px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Help Section
@@ -4654,12 +4654,12 @@ img{
 }
 
 .help-section .content-column .inner-column .risk:hover{
-	color:#443986;
+	color:#021529;
 }
 
 .help-section .content-column .inner-column .risk .fa{
 	position:relative;
-	color:#443986;
+	color:#021529;
 	font-weight: 600;
 	margin-right: 5px;
 }
@@ -4730,7 +4730,7 @@ img{
 	display: none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section Two
@@ -4864,7 +4864,7 @@ img{
 	font-weight: 600;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Modern Section
@@ -4928,7 +4928,7 @@ img{
 
 .modern-section .content-column .inner-column h2{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 48px;
 	font-weight: 600;
 	line-height: 1.2em;
@@ -4951,7 +4951,7 @@ img{
 	margin-bottom: 35px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Expert Section
@@ -5114,7 +5114,7 @@ img{
 	font-weight: 500;
 }
 
-/*** 
+/***
 
 ====================================================================
 	News Section Three
@@ -5175,7 +5175,7 @@ img{
 
 .news-block-three .inner-box:hover .image:before{
 	border: 0px double rgba(68,57,134,0.6);
-  
+
 }
 
 .news-block-three .inner-box .lower-content{
@@ -5254,7 +5254,7 @@ img{
 }
 
 .news-block-three .inner-box .lower-content .read-more:hover{
-	color:#443986;
+	color:#021529;
 }
 
 .news-block-three .inner-box .lower-content .read-more:before{
@@ -5282,13 +5282,13 @@ img{
 
 .news-block-three .inner-box .lower-content .read-more .fa{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-weight: 700;
 	margin-right: 4px;
 	display: inline-block;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Goals Section
@@ -5324,7 +5324,7 @@ img{
 
 .goals-section .title-column .inner-column h2{
 	position: relative;
-	color: #443986;
+	color: #021529;
 	font-size: 48px;
 	font-weight: 600;
 	line-height: 1.2em;
@@ -5355,7 +5355,7 @@ img{
 	margin-bottom: 0px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section Three
@@ -5378,7 +5378,7 @@ img{
 	background: url(../images/background/pattern-2.png) no-repeat;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Task Section
@@ -5389,7 +5389,7 @@ img{
 .task-section{
 	position: relative;
 	padding: 105px 0px 50px;
-	background-color: #443986;
+	background-color: #021529;
 }
 
 .task-section:before{
@@ -5458,7 +5458,7 @@ img{
 	margin-top: 50px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Offer Section
@@ -5506,7 +5506,7 @@ img{
 	bottom: 0px;
 	width: 70px;
 	height: 70px;
-	color: #443986;
+	color: #021529;
 	text-align: center;
 	line-height: 70px;
 	font-size: 24px;
@@ -5521,7 +5521,7 @@ img{
 
 .offer-section-two .offer-title-box .inner-box .arrow-box:hover{
 	color:#ffffff;
-	background-color: #443986;
+	background-color: #021529;
 }
 
 .offer-section-two .counter-box{
@@ -5562,7 +5562,7 @@ img{
 	width:50%;
 	height:0%;
 	display:block;
-	background-color:#443986;
+	background-color:#021529;
 	-webkit-transition:all 600ms ease;
 	-ms-transition:all 600ms ease;
 	-o-transition:all 600ms ease;
@@ -5578,7 +5578,7 @@ img{
 	width:50%;
 	height:0%;
 	display:block;
-	background-color:#443986;
+	background-color:#021529;
 	-webkit-transition:all 600ms ease;
 	-ms-transition:all 600ms ease;
 	-o-transition:all 600ms ease;
@@ -5608,7 +5608,7 @@ img{
 	width:50%;
 	height:0%;
 	display:block;
-	background-color:#443986;
+	background-color:#021529;
 	-webkit-transition:all 600ms ease;
 	-ms-transition:all 600ms ease;
 	-o-transition:all 600ms ease;
@@ -5624,7 +5624,7 @@ img{
 	width:50%;
 	height:0%;
 	display:block;
-	background-color:#443986;
+	background-color:#021529;
 	-webkit-transition:all 600ms ease;
 	-ms-transition:all 600ms ease;
 	-o-transition:all 600ms ease;
@@ -5639,7 +5639,7 @@ img{
 
 .services-block-three .inner-box .icon-box{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 60px;
 	line-height: 1em;
 	margin-bottom: 20px;
@@ -5731,7 +5731,7 @@ img{
 	background-color: rgba(255,255,255,0.20);
 }
 
-/*** 
+/***
 
 ====================================================================
 	Consulting Section
@@ -5801,7 +5801,7 @@ img{
 .consult-block .inner-box .content-column h3{
 	position: relative;
 	font-size: 22px;
-	color:#443986;
+	color:#021529;
 	font-weight: 600;
 	line-height: 1.3em;
 	margin-bottom: 18px;
@@ -5849,7 +5849,7 @@ img{
 	background-color:#ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Strategy Section
@@ -5889,7 +5889,7 @@ img{
 .strategy-section .title-box h2{
 	position: relative;
 	font-size: 48px;
-	color:#443986;
+	color:#021529;
 	font-weight: 600;
 	line-height: 1.2em;
 }
@@ -5911,7 +5911,7 @@ img{
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	color:#443986;
+	color:#021529;
 	line-height: 1em;
 	font-size: 70px;
 }
@@ -5946,7 +5946,7 @@ img{
 	line-height: 1.6em;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Stories Section
@@ -6113,7 +6113,7 @@ img{
 	top: -2px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Services Section Four
@@ -6183,7 +6183,7 @@ img{
 
 .services-block-four .inner-box .icon-box{
 	position: relative;
-	color: #443986;
+	color: #021529;
 	font-size: 65px;
 	line-height: 1em;
 	margin-bottom: 18px;
@@ -6218,7 +6218,7 @@ img{
 	color:#ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fluid Section Four
@@ -6327,7 +6327,7 @@ img{
 	float:left;
 }
 
-/*** 
+/***
 
 ====================================================================
 	News Section Four
@@ -6395,7 +6395,7 @@ img{
 
 .news-block-four .inner-box .content-column .post-info li{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 13px;
 	font-weight: 700;
 	padding-right: 14px;
@@ -6403,7 +6403,7 @@ img{
 	line-height: 1.2em;
 	display: inline-block;
 	text-transform: uppercase;
-	border-right: 1px solid #443986;
+	border-right: 1px solid #021529;
 }
 
 .news-block-four .inner-box .content-column .post-info li:last-child{
@@ -6463,21 +6463,21 @@ img{
 
 .news-block-four .inner-box .content-column .read-more .fa{
     position: relative;
-    color: #443986;
+    color: #021529;
     font-weight: 700;
     margin-right: 4px;
     display: inline-block;
 }
 
 .news-block-four .inner-box .content-column .read-more:hover{
-	color: #443986;
+	color: #021529;
 }
 
 .news-section-four .button-box{
 	margin-top: 120px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Page Title
@@ -6578,7 +6578,7 @@ img{
 	color:#ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Featured Section Two
@@ -6614,7 +6614,7 @@ img{
 }
 
 .feature-block-four .inner-box:hover .icon-box{
-	color:#443986;
+	color:#021529;
 }
 
 .feature-block-four .inner-box h3{
@@ -6647,7 +6647,7 @@ img{
 	line-height: 1.6em;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Skills Section
@@ -6735,7 +6735,7 @@ img{
 	position:absolute;
 	right: 0px;
 	top: -25px;
-	color:#443986;
+	color:#021529;
 	content: "\f0d7";
 	font-family: 'FontAwesome';
 }
@@ -6791,7 +6791,7 @@ img{
 
 .services-title-box .title-box h2{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 48px;
 	font-weight: 600;
 	line-height: 1.2em;
@@ -6808,7 +6808,7 @@ img{
 	margin: 0 auto;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Sidebar Page Container
@@ -6871,7 +6871,7 @@ img{
 .blog-cat li.active a{
 	color:#ffffff;
 	background-color: #ee2d50;
-	border-right: 5px solid #443986;
+	border-right: 5px solid #021529;
 }
 
 /*Testimonial Widget*/
@@ -6879,7 +6879,7 @@ img{
 .testimonial-widget .inner-widget{
 	position: relative;
 	padding: 40px 30px;
-	background-color: #443986;
+	background-color: #021529;
 }
 
 .testimonial-widget .inner-widget .owl-nav{
@@ -6986,7 +6986,7 @@ img{
 
 .brochure-widget h2{
 	position:relative;
-	color:#443986;
+	color:#021529;
 	font-size:18px;
 	font-weight:600;
 	padding-bottom:12px;
@@ -7042,7 +7042,7 @@ img{
 }
 
 .contact-info-widget.style-two .inner-content{
-	background-color: #443986;
+	background-color: #021529;
 }
 
 .contact-info-widget .inner-content .icon-box{
@@ -7106,7 +7106,7 @@ img{
 
 .services-single .inner-box .lower-content h2{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 36px;
 	font-weight: 600;
 	line-height: 1.2em;
@@ -7167,7 +7167,7 @@ img{
 	left: 0px;
 	top: 0px;
 	color:#ee2d50;
-	font-size: 50px; 
+	font-size: 50px;
 	line-height: 1em;
 }
 
@@ -7210,7 +7210,7 @@ img{
 
 .sidebar-title h2{
     font-size: 22px;
-    color: #443986;
+    color: #021529;
     font-weight: 600;
     line-height: 1.2em;
 	padding-left: 40px;
@@ -7232,7 +7232,7 @@ img{
 
 .sidebar .search-box .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .sidebar .search-box .form-group input[type="text"],
@@ -7265,7 +7265,7 @@ img{
 	color:#ffffff;
 	cursor: pointer;
 	line-height:55px;
-	background:#443986;
+	background:#021529;
 	font-weight:normal;
 }
 
@@ -7376,7 +7376,7 @@ img{
 	position: absolute;
 	left: 0px;
 	content: "\f0da";
-	color:#443986;
+	color:#021529;
 	font-size: 16px;
 	font-family: 'FontAwesome';
 }
@@ -7399,7 +7399,7 @@ img{
 	font-weight:600;
 	text-transform:capitalize;
 	background:none;
-	border:1px solid #443986;
+	border:1px solid #021529;
 	transition:all 300ms ease;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
@@ -7411,7 +7411,7 @@ img{
 .sidebar .popular-tags a:hover{
 	border-color:#ee2d50;
 	background-color:#ee2d50;
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 /*Newsletter Box*/
@@ -7445,7 +7445,7 @@ img{
 
 .newsletter-box .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .newsletter-box .form-group input[type="text"],
@@ -7475,7 +7475,7 @@ img{
 	width:50px;
 	display:block;
 	font-size:16px;
-	color:#443986;
+	color:#021529;
 	cursor: pointer;
 	line-height:55px;
 	font-weight:normal;
@@ -7618,11 +7618,11 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .news-block-five .inner-box .lower-content .read-more:hover{
-	color:#443986;
+	color:#021529;
 }
 
 .news-block-five .inner-box .lower-content .read-more:before{
@@ -7630,7 +7630,7 @@ img{
 	content: "\f105";
 	left: 0px;
 	top: -1px;
-	color:#443986;
+	color:#021529;
 	font-size: 16px;
 	font-family: 'FontAwesome';
 }
@@ -7672,7 +7672,7 @@ img{
 	-webkit-transition:all 0.3s ease;
 	-ms-transition:all 0.3s ease;
 	-o-transition:all 0.3s ease;
-	background-color:#443986;
+	background-color:#021529;
 }
 
 .news-block-five .inner-box .owl-nav .owl-next{
@@ -7691,7 +7691,7 @@ img{
 	-webkit-transition:all 0.3s ease;
 	-ms-transition:all 0.3s ease;
 	-o-transition:all 0.3s ease;
-	background-color:#443986;
+	background-color:#021529;
 }
 
 .news-block-five .inner-box .owl-nav .owl-prev:hover,
@@ -7879,11 +7879,11 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .news-block-seven .inner-box .read-more:hover{
-	color:#443986;
+	color:#021529;
 }
 
 .news-block-seven .inner-box .read-more:before{
@@ -7891,7 +7891,7 @@ img{
 	content: "\f105";
 	left: 0px;
 	top: -1px;
-	color:#443986;
+	color:#021529;
 	font-size: 16px;
 	font-family: 'FontAwesome';
 }
@@ -7906,7 +7906,7 @@ img{
 	background-color: #dddddd;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Styled Pagination
@@ -8122,11 +8122,11 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .news-block-eight .inner-box .content .read-more:hover{
-	color:#443986;
+	color:#021529;
 }
 
 .news-block-eight .inner-box .content .read-more:before{
@@ -8134,7 +8134,7 @@ img{
 	content: "\f105";
 	left: 0px;
 	top: -1px;
-	color:#443986;
+	color:#021529;
 	font-size: 16px;
 	font-family: 'FontAwesome';
 }
@@ -8149,7 +8149,7 @@ img{
 	background-color: #dddddd;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Blog Grid Section
@@ -8253,7 +8253,7 @@ img{
 	position:absolute;
 	right: 40px;
 	top: -25px;
-	color:#443986;
+	color:#021529;
 	font-size: 50px;
 	line-height: 1em;
 }
@@ -8306,7 +8306,7 @@ img{
 
 .blog-single .post-share-options .tags span{
 	font-size:16px;
-	color:#443986;
+	color:#021529;
 	font-weight:700;
 	margin-right:8px;
 	text-transform: uppercase;
@@ -8369,7 +8369,7 @@ img{
 
 .blog-single .inner-box .new-posts .prev-post a{
 	position:relative;
-	color:#443986;
+	color:#021529;
 	font-size:13px;
 	font-weight:700;
 	text-transform: uppercase;
@@ -8386,7 +8386,7 @@ img{
 
 .blog-single .inner-box .new-posts .next-post a{
 	position:relative;
-	color:#443986;
+	color:#021529;
 	font-size:13px;
 	font-weight:700;
 	text-transform: uppercase;
@@ -8406,7 +8406,7 @@ img{
 	color:#ee2d50;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Comments Area
@@ -8427,7 +8427,7 @@ img{
 .sidebar-page-container .group-title h2{
 	position:relative;
 	font-size:22px;
-	color:#443986;
+	color:#021529;
 	font-weight:700;
 	padding-left:40px;
 	text-transform:capitalize;
@@ -8461,7 +8461,7 @@ img{
 }
 
 .sidebar-page-container .comments-area .comment-box:hover{
-	border-color:#222222;	
+	border-color:#222222;
 }
 
 .sidebar-page-container .comments-area .comment{
@@ -8517,7 +8517,7 @@ img{
 .sidebar-page-container .comments-area .comment-info{
 	color:#3e5773;
 	line-height:24px;
-	font-size:13px;	
+	font-size:13px;
 }
 
 .sidebar-page-container .comments-area .comment-box strong{
@@ -8608,10 +8608,10 @@ img{
 .comment-form input:focus,
 .comment-form select:focus,
 .comment-form textarea:focus{
-	border-color:#f06529;	
+	border-color:#f06529;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Map Section
@@ -8624,7 +8624,7 @@ img{
 	padding-top: 115px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Map Section Style
@@ -8659,7 +8659,7 @@ img{
 	height:550px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Content Section
@@ -8739,7 +8739,7 @@ img{
 
 .contact-section .form-column .inner-column h2{
 	position: relative;
-	color:#443986;
+	color:#021529;
 	font-size: 22px;
 	font-weight: 600;
 	line-height: 1.2em;
@@ -8804,14 +8804,14 @@ img{
 .contact-form textarea{
 	height:170px;
 	resize:none;
-	padding:12px 5px;	
+	padding:12px 5px;
 }
 
 .contact-form .message-btn{
 	position: relative;
     padding: 13px 32px 13px;
     line-height: 24px;
-    background: #443986;
+    background: #021529;
     color: #ffffff;
     font-size: 16px;
     font-weight: 600;
@@ -8819,20 +8819,20 @@ img{
     letter-spacing: 1px;
 	cursor: pointer;
 	margin-top: 30px;
-    border: 2px solid #443986;
+    border: 2px solid #021529;
     text-transform: capitalize;
     font-family: 'Poppins', sans-serif;
 }
 
 .contact-form .message-btn:hover{
 	background:#ee2d50;
-	border-color:#ee2d50;	
+	border-color:#ee2d50;
 }
 
 .contact-form input.error,
 .contact-form select.error,
 .contact-form textarea.error{
-	border-color:#ff0000 !important;	
+	border-color:#ff0000 !important;
 }
 
 .contact-form label.error{
@@ -8843,10 +8843,10 @@ img{
 	text-transform:uppercase;
 	font-size:13px;
 	color:#ff0000;
-	font-weight:500;	
+	font-weight:500;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Portfolio Page Section
@@ -8899,7 +8899,7 @@ img{
 
 .portfolio-page-section .filters .filter-tabs .filter.active,
 .portfolio-page-section .filters .filter-tabs .filter:hover{
-	color:#443986;
+	color:#021529;
 }
 
 .portfolio-page-section .filters .filter-tabs .filter:before{
@@ -9256,7 +9256,7 @@ img{
 	margin-top: 50px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Portfolio Masonry Section
@@ -9340,7 +9340,7 @@ img{
 	position:relative;
 	width:36px;
 	height: 36px;
-	color:#443986;
+	color:#021529;
 	text-align: center;
 	line-height: 36px;
 	font-size: 18px;
@@ -9356,7 +9356,7 @@ img{
 
 .team-block .inner-box .image .overlay-box .social-box a:hover{
 	color:#ffffff;
-	background-color: #443986;
+	background-color: #021529;
 }
 
 .team-block .inner-box .lower-content{
@@ -9395,7 +9395,7 @@ img{
 	text-transform: uppercase;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Portfolio Single Section
@@ -9438,7 +9438,7 @@ img{
 .portfolio-single-section .content-column h2{
 	position: relative;
 	font-weight: 600;
-	color: #443986;
+	color: #021529;
 	font-size: 36px;
 	line-height: 1.3em;
 	margin-bottom: 15px;
@@ -9487,7 +9487,7 @@ img{
 
 .porfolio-info li span{
 	position: relative;
-	color: #443986;
+	color: #021529;
 	font-size: 13px;
 	font-weight: 700;
 	margin-right: 6px;
@@ -9549,7 +9549,7 @@ img{
 .new-posts .prev-post{
 	position: relative;
 	float: left;
-	color: #443986;
+	color: #021529;
 	font-size: 13px;
 	font-weight: 700;
 	letter-spacing: 1px;
@@ -9582,7 +9582,7 @@ img{
 .new-posts .next-post{
 	position: relative;
 	float: right;
-	color: #443986;
+	color: #021529;
 	font-size: 13px;
 	font-weight: 700;
 	letter-spacing: 1px;

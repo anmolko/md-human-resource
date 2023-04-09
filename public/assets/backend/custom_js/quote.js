@@ -74,7 +74,7 @@ $(document).on('click','.remove-item-btn', function (e) {
                         if(response.status == "success") {
                             Swal.fire({
                                 imageUrl: "/assets/backend/images/canosoft-logo.png",
-                                imageHeight: 60,
+                                imageHeight: 90,
                                 html: '<div class="mt-2">' +
                                     '<lord-icon src="https://cdn.lordicon.com/lupuorrc.json"' +
                                     'trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px">' +
@@ -95,7 +95,7 @@ $(document).on('click','.remove-item-btn', function (e) {
                         }else{
                             Swal.fire({
                                 imageUrl: "/assets/backend/images/canosoft-logo.png",
-                                imageHeight: 60,
+                                imageHeight: 90,
                                 html: '<div class="mt-2">' +
                                     '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                                     ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +

@@ -3,42 +3,30 @@
 @section('css')
 @endsection
 @section('content')
+    @if(count($sliders) > 0)
+        <section class="main-slider">
 
-    <!--Main Slider-->
-    <section class="main-slider">
-
-        <div class="main-slider-carousel owl-carousel owl-theme">
-
-            <div class="slide" style="background-image:url(images/main-slider/image-1.jpg)">
-                <div class="auto-container">
-                    <div class="content">
-                        <h3>Get The Success You Need</h3>
-                        <h2>Business Growth</h2>
-                        <div class="text">We are working with thousands of business companies around <br> the world & delivering ideas for your business</div>
-                        <div class="link-box">
-                            <a href="#" class="theme-btn btn-style-two">learn more</a>
+            <div class="main-slider-carousel owl-carousel owl-theme">
+                @foreach(@$sliders as $slider)
+                    <div class="slide" style="background-image:url({{ asset('/images/sliders/'.$slider->image) }})">
+                    <div class="auto-container">
+                        <div class="content">
+                            <h3>{{@$slider->subheading}}</h3>
+                            <h2>{{@$slider->heading}}</h2>
+                            @if(@$slider->link)
+                                <div class="link-box">
+                                    <a href="{{@$slider->link}}" class="theme-btn btn-style-two">{{@$slider->button ?? 'Start Exploring'}}</a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
+                @endforeach
+
+
             </div>
-
-            <div class="slide" style="background-image:url(images/main-slider/image-2.jpg)">
-                <div class="auto-container">
-                    <div class="content">
-                        <h3 class="style-two">Get The Success You Need</h3>
-                        <h2>We Accomplish</h2>
-                        <div class="text">We are working with thousands of business companies around <br> the world & delivering ideas for your business</div>
-                        <div class="link-box">
-                            <a href="#" class="theme-btn btn-style-two">learn more</a> <a href="#" class="theme-btn btn-style-three">Our Servics</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!--End Main Slider-->
-
+        </section>
+    @endif
     <!--Services Section-->
     <section class="services-section">
         <div class="auto-container">

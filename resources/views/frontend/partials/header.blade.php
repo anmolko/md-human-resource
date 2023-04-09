@@ -1,20 +1,51 @@
 <head>
-    <meta charset="utf-8">
-    <title>Zemen Consulting HTML Template | Homepage</title>
+
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="MD Human resource">
+    <meta name="description" content="@if(!empty(@$setting_data->meta_description)) {{ucwords(@$setting_data->meta_description)}} @else MD Human resource @endif"/>
+    <meta name="keywords" content="@if(!empty(@$setting_data->meta_tags)) {{@$setting_data->meta_tags}} @else MD Human resource @endif">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <link rel="canonical" href="https://mdhumanresource.com" />
+
+    @if (\Request::is('/'))
+        <title>@if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource @endif </title>
+    @else
+        <title>@yield('title') | @if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource @endif </title>
+    @endif
+
+
+    <meta property="og:title" content="@if(!empty(@$setting_data->meta_title)) {{ucwords(@$setting_data->meta_title)}} @else  MD Human resource @endif" />
+    <meta property="og:type" content="Consultancy" />
+    <meta property="og:url" content="https://mdhumanresource.com/" />
+    <meta property="og:site_name" content="MD Human resource" />
+    <meta property="og:description" content="@if(!empty(@$setting_data->meta_description)) {{ucwords(@$setting_data->meta_description)}} @else MD Human resource @endif " />
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ (@$setting_data->favicon) ? asset('/images/settings/'.@$setting_data->favicon):asset('assets/backend/images/canosoft-favicon.png') }}">
+
+
     <!-- Stylesheets -->
     <link href="{{asset('assets/frontend/css/bootstrap.css')}}" rel="stylesheet">
 
     <link href="{{asset('assets/frontend/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('assets/frontend/css/slick.css')}}" rel="stylesheet">
     <link href="{{asset('assets/frontend/css/responsive.css')}}" rel="stylesheet">
-
-    <link rel="shortcut icon" href="{{asset('assets/frontend/images/favicon.png')}}" type="image/x-icon">
-    <link rel="icon" href="{{asset('assets/frontend/images/favicon.png')}}" type="image/x-icon">
-
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{@$setting_data->google_analytics}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{@$setting_data->google_analytics}}');
+    </script>
+    @yield('css')
+    @stack('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -35,20 +66,46 @@
                     <!--Top Left-->
                     <div class="top-left">
                         <ul class="header-info-list">
-                            <li><span class="icon fa fa-envelope"></span><strong>Email</strong> business@zemenconsult.com</li>
-                            <li><span class="icon fa fa-map-marker"></span><strong>Location</strong> 49 BelWest Lane, TX 26098</li>
+                            <li><span class="icon fa fa-envelope"></span><a href="mailto:{{@$setting_data->phone ?? ''}}">{{@$setting_data->email ?? ''}}</a></li>
+                            <li><span class="icon fa fa-map-marker"></span> <a href="mailto:{{@$setting_data->email ?? ''}}">{{@$setting_data->address ?? ''}}</a></li>
                         </ul>
                     </div>
                     <!--Top Right-->
                     <div class="top-right">
                         <!--Social Box-->
                         <ul class="social-box">
-                            <li class="share">Connect With Us</li>
-                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                            <li><a href="#"><span class="fa fa-vimeo"></span></a></li>
-                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            @if(@$setting_data->facebook)
+                                <li>
+                                    <a href="{{@$setting_data->facebook}}">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                            @endif
+                            @if(@$setting_data->youtube)
+                                <li>
+                                    <a href="{{@$setting_data->youtube}}">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a>
+                                </li>
+                            @endif
+                            @if(@$setting_data->instagram)
+                                <li><a href="{{@$setting_data->instagram}}">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a></li>
+                            @endif
+                            @if(@$setting_data->linkedin)
+                                <li><a href="{{@$setting_data->linkedin}}">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            @endif
+                            @if(!empty(@$setting_data->ticktock))
+                                <li>
+                                    <a href="{{@$setting_data->ticktock}}">
+                                        <i class="fa-brands fa-tiktok"></i>
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -61,7 +118,7 @@
                 <div class="clearfix">
 
                     <div class="pull-left logo-box">
-                        <div class="logo"><a href="index-2.html"><img src="{{asset('assets/frontend/images/logo.png')}}" alt="" title=""></a></div>
+                        <div class="logo"><a href="/"><img src="{{asset('assets/frontend/images/logo.png')}}" alt="" title=""></a></div>
                     </div>
 
                     <div class="nav-outer clearfix">

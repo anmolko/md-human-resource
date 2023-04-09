@@ -40,7 +40,7 @@
                         </div>
                         <div class="sc-about-text-box sc-md-mt-50 sc-pl-30 sc-md-pl-0" data-sal="slide-left" data-sal-duration="800">
                             <div class="sc-heading-area sc-mb-35">
-                                <span class="sub-title"><i class="icon-line"></i> {{$basic_elements->subheading??'Omama Manpower'}}</span>
+                                <span class="sub-title"><i class="icon-line"></i> {{$basic_elements->subheading??'MD Human resource'}}</span>
                                 <h2 class="title">
                                     <?php
                                     $split = explode(" ", @$basic_elements->heading);?> {{preg_replace('/\W\w+\s*(\W*)$/', '$1', ucwords(@$basic_elements->heading))."\n"}}
@@ -393,7 +393,7 @@
                                                 <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}"><i class="icon-sliuder-arrow2"></i></a>
                                             </div>
                                             <div class="sc-project-text">
-                                                <span class="sub-title">Omama Manpower</span>
+                                                <span class="sub-title">MD Human resource</span>
                                                 <h4><a class="title" href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}">
                                                         {{ucwords(@$slider_list_elements[$i-1]->list_header)}}</a></h4>
                                             </div>

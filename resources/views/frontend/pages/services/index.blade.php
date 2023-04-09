@@ -38,7 +38,7 @@
                                         <a href="{{route('service.single',$service->slug)}}"><i class="icon-sliuder-arrow2"></i></a>
                                     </div>
                                     <div class="sc-project-text">
-                                        <span class="sub-title">Omama Consulting</span>
+                                        <span class="sub-title">MD Human resource</span>
                                         <h4><a class="title" href="{{route('service.single',$service->slug)}}">{{ucwords(@$service->title)}}</a></h4>
                                     </div>
                                 </div>
