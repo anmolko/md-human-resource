@@ -7,26 +7,20 @@
     <meta name="author" content="MD Human resource">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <link rel="canonical" href="https://omamamanpower.com" />
+    <link rel="canonical" href="https://mdhumanresource.com" />
 
     @yield('seo')
 
-<!-- Bootstrap  v5.1.3 css -->
-    <link rel="stylesheet" href="{{asset('assets/frontend/css/bootstrap.min.css')}}" />
-    <!-- Sall css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/sal.css')}}" />
-    <!-- magnific css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/magnific-popup.css')}}" />
-    <!-- Swiper Slider css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/swiper.min.css')}}" />
-    <!-- Remixicon Fonts css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/ico-fonts.css')}}" />
-    <!-- Remixicon Fonts css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/odometer.min.css')}}" />
-    <!-- style css -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/style.css')}}" />
+    <!-- Stylesheets -->
+    <link href="{{asset('assets/frontend/css/bootstrap.css')}}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="{{asset('assets/frontend/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/frontend/css/slick.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/frontend/css/responsive.css')}}" rel="stylesheet">
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{@$setting_data->google_analytics}}"></script>
@@ -39,128 +33,207 @@
     </script>
     @yield('css')
     @stack('styles')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
-<!-- preloader -->
-{{--<div id="preloader" class="preloader">--}}
-{{--    <div class="animation-preloader">--}}
-{{--        <div class="spinner">--}}
-{{--            <div class="loader-icon">--}}
-{{--                <img src="{{ (@$setting_data->favicon) ? asset('/images/settings/'.@$setting_data->favicon): asset('assets/frontend/images/favicon.png')}}" alt="Omama Manpower Pvt Ltd" />--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="txt-loading">--}}
-{{--            <span data-text-preloader="O" class="letters-loading"> O </span>--}}
-{{--            <span data-text-preloader="M" class="letters-loading"> M </span>--}}
-{{--            <span data-text-preloader="A" class="letters-loading"> A </span>--}}
-{{--            <span data-text-preloader="M" class="letters-loading"> M </span>--}}
-{{--            <span data-text-preloader="A" class="letters-loading"> A </span>--}}
-{{--        </div>--}}
-{{--        <p class="text-center">Loading</p>--}}
-{{--    </div>--}}
-{{--</div>--}}
-<!-- welcome content start from here -->
 
-<!--========== Header Section Start ==============-->
-<header class="sc-header-section" id="sc-header-sticky">
-    <div class="sc-topbar-section sc-topbar-section-two">
-        <div class="container">
-            <!-- Topbar Section Start -->
-            <div class="row align-items-center">
-                <div class="col-lg-9 col-md-7">
-                    <div class="sc-menu-inner p-z-idex d-flex align-items-center justify-content-md-start justify-content-center">
-                        {{--                        <div class="sc-header-date">--}}
-                        {{--                            <ul class="list-gap sc-date">--}}
-                        {{--                                <li><i class="icon-timer"></i> No hidden charges apply</li>--}}
-                        {{--                            </ul>--}}
-                        {{--                        </div>--}}
-                        <div class="sc-header-content-left text-center">
-                            <ul class="list-gap white-color">
-                                {{--                                <li>--}}
-                                {{--                                    <i class="icon-phone"></i--}}
-                                {{--                                    ><a href="tel:+1(520)2563650"> +1 (520) 256 3650</a>--}}
-                                {{--                                </li>--}}
-                                <li>
-                                    <i class="icon-map"></i
-                                    ><a href="mailto:{{@$setting_data->email ?? ''}}"> {{@$setting_data->address ?? ''}}</a>
-                                </li>
-                                <li class="header-mail">
-                                    <i class="icon-message"></i
-                                    ><a href="mailto:{{@$setting_data->email ?? ''}}">{{@$setting_data->email ?? ''}}</a>
-                                </li>
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="preloader"></div>
 
-                            </ul>
-                        </div>
+    <!-- Main Header-->
+    <header class="main-header">
+
+        <!--Header Top-->
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="clearfix">
+                    <!--Top Left-->
+                    <div class="top-left">
+                        <ul class="header-info-list">
+                            <li><span class="icon fa fa-envelope"></span><a href="mailto:{{@$setting_data->phone ?? ''}}">{{@$setting_data->email ?? ''}}</a></li>
+                            <li><span class="icon fa fa-map-marker"></span> <a href="mailto:{{@$setting_data->email ?? ''}}">{{@$setting_data->address ?? ''}}</a></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-5">
-                    <div
-                        class="sc-header-content-right p-z-idex align-items-center d-flex justify-content-md-end justify-content-center"
-                    >
-                        <div class="sc-header-social-icon">
-                            <ul class="list-gap sc-social-list">
-                                @if(@$setting_data->facebook)
-                                    <li>
-                                        <a href="{{@$setting_data->facebook}}"> <i class="icon-facebook-2"></i></a>
-                                    </li>
-                                @endif
-                                @if(@$setting_data->youtube)
-                                    <li>
-                                        <a href="{{@$setting_data->youtube}}"> <i class="icon-youtube" style="font-size: 16px;"></i></a>
-                                    </li>
-                                @endif
-                                @if(@$setting_data->instagram)
-                                    <li>
-                                        <a href="{{@$setting_data->instagram}}"> <i class="icon-intragram"></i></a>
-                                    </li>
-                                @endif
-                                @if(@$setting_data->linkedin)
-                                    <li>
-                                        <a href="{{@$setting_data->linkedin}}"> <i class="icon-linkedin-2"></i></a>
-                                    </li>
-                                @endif
-                                @if(!empty(@$setting_data->ticktock))
-                                    <li>
-                                        <a href="{{@$setting_data->linkedin}}"> <i class="fa-brands fa-tiktok"></i></a>
-                                    </li>
-                                @endif
-                            </ul>
-                        </div>
+                    <!--Top Right-->
+                    <div class="top-right">
+                        <!--Social Box-->
+                        <ul class="social-box">
+                            @if(@$setting_data->facebook)
+                                <li>
+                                    <a href="{{@$setting_data->facebook}}">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                            @endif
+                            @if(@$setting_data->youtube)
+                                <li>
+                                    <a href="{{@$setting_data->youtube}}">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a>
+                                </li>
+                            @endif
+                            @if(@$setting_data->instagram)
+                                <li><a href="{{@$setting_data->instagram}}">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a></li>
+                            @endif
+                            @if(@$setting_data->linkedin)
+                                <li><a href="{{@$setting_data->linkedin}}">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                </li>
+                            @endif
+                            @if(!empty(@$setting_data->ticktock))
+                                <li>
+                                    <a href="{{@$setting_data->ticktock}}">
+                                        <i class="fa-brands fa-tiktok"></i>
+                                    </a>
+                                </li>
+                            @endif
+                        </ul>
                     </div>
                 </div>
             </div>
-            <!-- Topbar Section End -->
         </div>
-    </div>
-    <!-- Header Section Start -->
-    <div class="sc-header-content sc-header-content-two">
-        <div class="container">
-            <div class="row align-items-center justify-content-between p-z-idex">
-                <div class="col-lg-9 col-6">
-                    <div class="sc-menu-inner d-flex align-items-center">
-                        <div class="sc-header-logo sc-pr-112">
-                            <a href="/"><img src="{{asset('/images/settings/'.@$setting_data->logo)}}" /></a>
+
+        <!--Header-Upper-->
+        <div class="header-upper">
+            <div class="auto-container">
+                <div class="clearfix">
+
+                    <div class="pull-left logo-box">
+                        <div class="logo"><a href="/">
+                                <img style="height: 60px" src="{{asset('/images/settings/'.@$setting_data->logo)}}" alt=""></a>
                         </div>
-                        <div class="sc-main-menu d-lg-block d-none">
-                            <!-- Mainmenu Section Start -->
-                            <ul class="list-gap main-menu">
-                                <li class="current-menu-item">
-                                    <a class="active" href="/"> Home</a>
-                                </li>
+                    </div>
+
+                    <div class="nav-outer clearfix">
+
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-md">
+                            <div class="navbar-header">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+
+                            <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix">
+                                    <li class="current"><a href="/">Home</a></li>
+                                    @if(!empty($top_nav_data))
+                                        @foreach($top_nav_data as $nav)
+                                            @if(!empty($nav->children[0]))
+                                                <li class="dropdown">
+                                                    <a href="#">{{ @$nav->name ?? @$nav->title }}</a>
+                                                    <ul>
+                                                        @foreach($nav->children[0] as $childNav)
+                                                            <li class="{{!empty($childNav->children[0]) ? 'dropdown':''}}">
+                                                                <a href="{{get_menu_url($childNav->type, $childNav)}}" target="{{@$childNav->target ? '_blank':''}}">
+                                                                    {{ @$childNav->name ?? @$childNav->title ??''}}</a>
+                                                                @if(!empty($childNav->children[0]))
+                                                                    <ul>
+                                                                        @foreach($childNav->children[0] as $key => $lastchild)
+
+                                                                            <li>
+                                                                                <a href="{{get_menu_url($lastchild->type, $lastchild)}}" target="{{@$lastchild->target ? '_blank':''}}">
+                                                                                    {{ @$lastchild->name ?? @$lastchild->title ?? ''}}</a>
+                                                                            </li>
+                                                                        @endforeach
+                                                                    </ul>
+                                                                @endif
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        <li>
+                                            <a href="{{get_menu_url($nav->type, $nav)}}" target="{{@$nav->target ? '_blank':''}}">
+                                                {{ @$nav->name ?? @$nav->title ??''}}
+                                            </a>
+                                        </li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </nav>
+
+
+                        <div class="button-box">
+                            <a href="{{route('contact')}}" class="theme-btn btn-style-one">Reach out</a>
+                        </div>
+
+                        <!--Search Box Outer-->
+                        <div class="search-box-outer">
+                            <div class="dropdown">
+                                <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
+                                <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
+                                    <li class="panel-outer">
+                                        <div class="form-container">
+                                            <form method="get" id="searchform" action="{{route('searchJob')}}">
+                                                <div class="form-group">
+                                                    <input  id="s" name="s" type="text" class="form-control" placeholder="Find Jobs here.." oninvalid="this.setCustomValidity('Type a keyword')" oninput="this.setCustomValidity('')" required>
+                                                    <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+
+        <!--Sticky Header-->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a href="/" class="img-responsive">
+                        <img style="height: 60px" src="{{asset('/images/settings/'.@$setting_data->logo)}}" alt="">
+                    </a>
+                </div>
+
+                <!--Right Col-->
+                <div class="right-col pull-right">
+                    <!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-md">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
+                            <ul class="navigation clearfix">
+                                <li class="current"><a href="/">Home</a></li>
                                 @if(!empty($top_nav_data))
                                     @foreach($top_nav_data as $nav)
                                         @if(!empty($nav->children[0]))
-                                            <li class="menu-item-has-children">
+                                            <li class="current dropdown">
                                                 <a href="#">{{ @$nav->name ?? @$nav->title }}</a>
-                                                <ul class="list-gap sub-menu-list">
+                                                <ul>
                                                     @foreach($nav->children[0] as $childNav)
-                                                        <li class="menu-item-has-inner-children"><a href="{{get_menu_url($childNav->type, $childNav)}}" target="{{@$childNav->target ? '_blank':''}}">
+                                                        <li class="{{!empty($childNav->children[0]) ? 'dropdown':''}}">
+                                                            <a href="{{get_menu_url($childNav->type, $childNav)}}" target="{{@$childNav->target ? '_blank':''}}">
                                                                 {{ @$childNav->name ?? @$childNav->title ??''}}</a>
                                                             @if(!empty($childNav->children[0]))
-                                                                <ul class="list-gap inner-menu-list">
+                                                                <ul>
                                                                     @foreach($childNav->children[0] as $key => $lastchild)
-                                                                        <li><a href="{{get_menu_url($lastchild->type, $lastchild)}}" target="{{@$lastchild->target ? '_blank':''}}">
+
+                                                                        <li>
+                                                                            <a href="{{get_menu_url($lastchild->type, $lastchild)}}" target="{{@$lastchild->target ? '_blank':''}}">
                                                                                 {{ @$lastchild->name ?? @$lastchild->title ?? ''}}</a>
                                                                         </li>
                                                                     @endforeach
@@ -169,41 +242,25 @@
                                                         </li>
                                                     @endforeach
                                                 </ul>
-                                            </li>
-                                        @else
-                                            <li>
-                                                <a href="{{get_menu_url($nav->type, $nav)}}" target="{{@$nav->target ? '_blank':''}}">
-                                                    {{ @$nav->name ?? @$nav->title ??''}}</a>
+
                                             </li>
                                         @endif
                                     @endforeach
+                                @else
+                                    <li>
+                                        <a href="{{get_menu_url($nav->type, $nav)}}" target="{{@$nav->target ? '_blank':''}}">
+                                            {{ @$nav->name ?? @$nav->title ??''}}
+                                        </a>
+                                    </li>
                                 @endif
                             </ul>
                         </div>
-                    </div>
+                    </nav><!-- Main Menu End-->
                 </div>
-                <div class="col-lg-3 col-6">
-                    <div class="sc-menu-select-box d-flex align-items-center justify-content-end">
-                        <div class="sc-search-box sc-mr-20">
-                            <a data-bs-target="#search-modal" data-bs-toggle="modal" href="#">
-                                <i class="icon-search"></i>
-                            </a>
-                        </div>
-                        <div class="sc-hambagur-icon sc-mr-20">
-                            <a id="canva_expander" href="#" class="nav-menu-link menu-button">
-                                <span class="dot1"></span>
-                                <span class="dot2"></span>
-                                <span class="dot3"></span>
-                            </a>
-                        </div>
-                        <div class="header-btn">
-                            <a href="#"><i class="ri-search-line"></i></a>
-                            <a class="sc-primary-btn" href="{{route('contact')}}">Get Consulting</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
-    </div>
-</header>
-<!--========== Header Section End ==============-->
+        <!--End Sticky Header-->
+
+    </header>
+    <!--End Main Header -->

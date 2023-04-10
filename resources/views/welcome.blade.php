@@ -27,268 +27,258 @@
             </div>
         </section>
     @endif
-    <!--Services Section-->
-    <section class="services-section">
-        <div class="auto-container">
-            <div class="inner-container">
+
+    @if($homepage_info->mission)
+        <section class="services-section">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="row clearfix">
+
+                        <!--Services Block-->
+                        <div class="services-block col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <h3><a> Our Mission </a></h3>
+                                <div class="icon-box">
+                                    <span class="icon flaticon-analysis"></span>
+                                </div>
+                                <div class="text">
+                                    {{ ucfirst(@$homepage_info->mission) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Services Block-->
+                        <div class="services-block col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                                <h3><a>Our Vision </a></h3>
+                                <div class="icon-box">
+                                    <span class="icon flaticon-sports-and-competition"></span>
+                                </div>
+                                <div class="text">
+                                    {{ ucfirst(@$homepage_info->vision) }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Services Block-->
+                        <div class="services-block col-lg-4 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+                                <h3><a>Our Value</a></h3>
+                                <div class="icon-box">
+                                    <span class="icon flaticon-graph"></span>
+                                </div>
+                                <div class="text">
+                                    {{ ucfirst(@$homepage_info->value) }}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if(!empty($homepage_info->welcome_description))
+        <section class="about-section">
+            <div class="auto-container">
                 <div class="row clearfix">
 
-                    <!--Services Block-->
-                    <div class="services-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <h3><a href="business-consult.html">Advanced Business <br> Solutions</a></h3>
+                    <!--Title Column-->
+                    <div class="title-column col-lg-5 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            <!--Sec Title-->
+                            <div class="sec-title">
+                                <h2>{{$homepage_info->welcome_heading ?? ''}}</h2>
+                                <div class="title-text">{{$homepage_info->welcome_subheading ?? ''}}</div>
+                            </div>
+                            <div class="text">
+                                {{ ucfirst(@$homepage_info->welcome_description) }}
+                            </div>
+                            @if(@$homepage_info->welcome_link)
+                                <a href="{{@$homepage_info->welcome_link}}" class="theme-btn btn-style-five">{{@$homepage_info->welcome_button??'Learn More'}}</a>
+                            @endif
+                        </div>
+                    </div>
+
+                    <!--Video Column-->
+                    <div class="video-column col-lg-7 col-md-12 col-sm-12">
+                        <div class="inner-column wow fadeInRight" data-wow-delay="600ms" data-wow-duration="1500ms">
+
+                            <!--Video Box-->
+                            <div class="video-box">
+                                <figure class="image">
+                                    <img src="{{ @$homepage_info->welcome_image ? asset('/images/home/welcome/'.@$homepage_info->welcome_image):''}}" alt="">
+                                </figure>
+                                @if(@$homepage_info->welcome_video_link)
+                                    <a href="{{@$homepage_info->welcome_video_link}}"
+                                       class="lightbox-image overlay-box"><span class="flaticon-arrow"></span></a>
+                                @endif
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    @endif
+
+    @if(!empty($homepage_info->action_heading))
+        <div class="call-to-action-section">
+            <div class="outer-container">
+                <div class="clearfix">
+
+                    <div class="left-column clearfix">
+                        <div class="image-layer" style="background-image: url({{asset('assets/frontend/images/background/1.jpg')}})"></div>
+                        <div class="inner-column">
+                            <h2>{{@$homepage_info->action_heading}}</h2>
+                        </div>
+                    </div>
+
+                    <div class="right-column">
+                        <div class="inner-column">
+                            <a href="{{@$homepage_info->action_link2}}" class="theme-btn btn-style-four">
+                                {{@$homepage_info->action_link ?? 'Learn more'}}
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    @endif
+
+    @if(!empty($homepage_info->core_main_heading))
+        <section class="planning-section">
+            <div class="auto-container">
+                <!--Sec Title-->
+                <div class="sec-title centered">
+                    <div class="title-text">{{ucfirst(@$homepage_info->core_main_description)}}</div>
+                    <h2>{{ucfirst(@$homepage_info->core_main_heading)}}</h2>
+                </div>
+
+                <div class="row clearfix">
+                    <!--Services Block Four-->
+                    <div class="services-block-four col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="icon-box">
+                                <span class="icon flaticon-handshake"></span>
+                            </div>
+                            <h3><a>{{ucwords(@$homepage_info->core_heading1 ?? '')}}</a></h3>
+                            <div class="text">
+                                {{ucfirst(@$homepage_info->core_description1 ?? '')}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Services Block Four-->
+                    <div class="services-block-four col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="icon-box">
+                                <span class="icon flaticon-path"></span>
+                            </div>
+                            <h3><a>{{ucwords(@$homepage_info->core_heading2)}}</a></h3>
+                            <div class="text">
+                                {{ucfirst(@$homepage_info->core_description2)}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Services Block Four-->
+                    <div class="services-block-four col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInDown" data-wow-delay="400ms" data-wow-duration="1500ms">
                             <div class="icon-box">
                                 <span class="icon flaticon-analysis"></span>
                             </div>
-                            <div class="text">Acepteur sintas haecat sed cupidatat non dui proident sunt culpa qui officia sed ipsum tempor eserunt.</div>
-                            <div class="more-link"><a class="read-more" href="business-consult.html"><span class="arrow fa fa-angle-right"></span> Read more</a></div>
+                            <h3><a>{{ucwords(@$homepage_info->core_heading3)}}</a></h3>
+                            <div class="text">
+                                {{ucfirst(@$homepage_info->core_description3)}}
+                            </div>
                         </div>
                     </div>
 
-                    <!--Services Block-->
-                    <div class="services-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                            <h3><a href="business-consult.html">Increase Your Online <br> Presence</a></h3>
+                    <!--Services Block Four-->
+                    <div class="services-block-four col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInRight" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="icon-box">
-                                <span class="icon flaticon-sports-and-competition"></span>
+                                <span class="icon flaticon-analytics"></span>
                             </div>
-                            <div class="text">Acepteur sintas haecat sed cupidatat non dui proident sunt culpa qui officia sed ipsum tempor eserunt.</div>
-                            <div class="more-link"><a class="read-more" href="business-consult.html"><span class="arrow fa fa-angle-right"></span> Read more</a></div>
+                            <h3><a>{{ucwords(@$homepage_info->core_heading4)}}</a></h3>
+                            <div class="text">
+                                {{ucfirst(@$homepage_info->core_description4)}}
+                            </div>
                         </div>
                     </div>
 
-                    <!--Services Block-->
-                    <div class="services-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                            <h3><a href="business-consult.html">Become Successful <br> & Superior</a></h3>
+                    <!--Services Block Four-->
+                    <div class="services-block-four col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="800ms" data-wow-duration="1500ms">
                             <div class="icon-box">
-                                <span class="icon flaticon-graph"></span>
+                                <span class="icon flaticon-worker"></span>
                             </div>
-                            <div class="text">Acepteur sintas haecat sed cupidatat non dui proident sunt culpa qui officia sed ipsum tempor eserunt.</div>
-                            <div class="more-link"><a class="read-more" href="business-consult.html"><span class="arrow fa fa-angle-right"></span> Read more</a></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Services Section-->
-
-    <!--About Section-->
-    <section class="about-section">
-        <div class="auto-container">
-            <div class="row clearfix">
-
-                <!--Title Column-->
-                <div class="title-column col-lg-5 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <!--Sec Title-->
-                        <div class="sec-title">
-                            <h2>About zemen</h2>
-                            <div class="title-text">Automate & Simplify The Whole Process</div>
-                        </div>
-                        <div class="text">Duis aute irure dolor reprehenderit in voluptate velit essle cillum dolore eu fugiat nulla pariatur. Excepteur sint ocaec at cupdatat proident suntin culpa qui officia deserunt mol anim id esa laborum perspiciatis omnis.</div>
-                        <a href="#" class="theme-btn btn-style-five">Who We Are</a>
-                    </div>
-                </div>
-
-                <!--Video Column-->
-                <div class="video-column col-lg-7 col-md-12 col-sm-12">
-                    <div class="inner-column wow fadeInRight" data-wow-delay="600ms" data-wow-duration="1500ms">
-
-                        <!--Video Box-->
-                        <div class="video-box">
-                            <figure class="image">
-                                <img src="images/resource/video-img.jpg" alt="">
-                            </figure>
-                            <a href="https://www.youtube.com/watch?v=kxPCFljwJws" class="lightbox-image overlay-box"><span class="flaticon-arrow"></span></a>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!--End About Section-->
-
-    <!--Fluid Section One-->
-    <section class="fluid-section-one">
-        <div class="outer-container clearfix">
-
-            <!--Image Column-->
-            <div class="image-column" style="background-image:url(images/resource/image-1.jpg);">
-                <figure class="image-box"><img src="images/resource/image-1.jpg" alt=""></figure>
-            </div>
-
-            <!--Content Column-->
-            <div class="content-column">
-                <div class="inner-column">
-                    <div class="clearfix">
-
-                        <!--Title Column-->
-                        <div class="title-box">
-                            <div class="box-inner">
-                                <h2>Mission <br> & History</h2>
-                                <div class="text">Voluptate velit essle duis irurey dolor reprehenderitn cillum dolorete fugiat nulla pariatur. Excepteur sint oaec sed capdatat proident suntin. Culpa officia deserunt molanim laborum perspicatis aute omnis lorem.</div>
+                            <h3><a>{{ucwords(@$homepage_info->core_heading5)}}</a></h3>
+                            <div class="text">
+                                {{ucfirst(@$homepage_info->core_description5)}}
                             </div>
                         </div>
+                    </div>
 
-                        <!--Carousel Box-->
-                        <div class="carousel-box">
-                            <div class="box-inner">
-                                <div class="quote-icon">
-                                    <span class="icon flaticon-right-quote-sign"></span>
-                                </div>
-
-                                <div class="single-item-carousel owl-carousel owl-theme">
-
-                                    <!--Testimonial Block-->
-                                    <div class="testimonial-block">
-                                        <div class="inner-box">
-                                            <div class="text">Ptate velit essle duis irue dolor repa enderitn doloreu fugiatla pariaturs Excepeur sint ocae cupdat proident suntin culpa officia deserunt olanim laborum perspiciat aute.</div>
-                                            <div class="author">Thomas Neil : <span>President</span></div>
-                                        </div>
-                                    </div>
-
-                                    <!--Testimonial Block-->
-                                    <div class="testimonial-block">
-                                        <div class="inner-box">
-                                            <div class="text">Ptate velit essle duis irue dolor repa enderitn doloreu fugiatla pariaturs Excepeur sint ocae cupdat proident suntin culpa officia deserunt olanim laborum perspiciat aute.</div>
-                                            <div class="author">Thomas Neil : <span>President</span></div>
-                                        </div>
-                                    </div>
-
-                                    <!--Testimonial Block-->
-                                    <div class="testimonial-block">
-                                        <div class="inner-box">
-                                            <div class="text">Ptate velit essle duis irue dolor repa enderitn doloreu fugiatla pariaturs Excepeur sint ocae cupdat proident suntin culpa officia deserunt olanim laborum perspiciat aute.</div>
-                                            <div class="author">Thomas Neil : <span>President</span></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
+                    <!--Services Block Four-->
+                    <div class="services-block-four col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1500ms">
+                            <div class="icon-box">
+                                <span class="icon flaticon-value"></span>
+                            </div>
+                            <h3><a>{{ucwords(@$homepage_info->core_heading6)}}</a></h3>
+                            <div class="text">
+                                {{ucfirst(@$homepage_info->core_description6)}}
                             </div>
                         </div>
-
                     </div>
+
                 </div>
+
             </div>
+        </section>
+    @endif
 
-        </div>
-    </section>
-    <!--End Fluid Section One-->
-
-    <!--Offer Section-->
-    <section class="offer-section">
+    <!--Case Section-->
+    <section class="case-section">
         <div class="auto-container">
             <!--Sec Title-->
             <div class="sec-title centered">
-                <h2>What We Offers</h2>
-                <div class="title-text">Automate & Simplify The Whole Process</div>
+                <h2>What we provide</h2>
+                <div class="title-text">Our Best Services</div>
             </div>
+        </div>
+        <div class="four-item-carousel owl-carousel owl-theme">
 
-            <div class="row clearfix">
-
-                <!--Offer Block-->
-                <div class="offer-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="financial-investment.html"><img src="images/resource/offer-1.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a href="financial-investment.html">Financial Analysis</a></h3>
-                            <div class="text">Acepteur sintas haecate sed ipsums cupidates nondui proident sunlt culpa qui tempore officia sed ipsum tempor eserunt.</div>
-                            <a class="read-more" href="financial-investment.html"><span class="fa fa-angle-right"></span> Read more</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Offer Block-->
-                <div class="offer-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="financial-investment.html"><img src="images/resource/offer-2.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a href="financial-investment.html">Research Managment</a></h3>
-                            <div class="text">Acepteur sintas haecate sed ipsums cupidates nondui proident sunlt culpa qui tempore officia sed ipsum tempor eserunt.</div>
-                            <a class="read-more" href="financial-investment.html"><span class="fa fa-angle-right"></span> Read more</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Offer Block-->
-                <div class="offer-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="financial-investment.html"><img src="images/resource/offer-3.jpg" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <h3><a href="financial-investment.html">Investment Trade</a></h3>
-                            <div class="text">Acepteur sintas haecate sed ipsums cupidates nondui proident sunlt culpa qui tempore officia sed ipsum tempor eserunt.</div>
-                            <a class="read-more" href="financial-investment.html"><span class="fa fa-angle-right"></span> Read more</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!--Counter Section-->
-            <div class="counter-section">
-                <div class="inner-section">
-
-                    <div class="fact-counter">
-                        <div class="row clearfix">
-
-                            <!--Column-->
-                            <div class="column counter-column col-md-4 col-sm-6 col-xs-12">
-                                <div class="inner">
-                                    <div class="content">
-                                        <div class="count-outer count-box">
-                                            <span class="count-text" data-speed="2500" data-stop="260">0</span>+
-                                        </div>
-                                        <h4 class="counter-title">Expert Consultants</h4>
-                                    </div>
+            @foreach(@$latestServices as $index=>$service)
+                <div class="case-block">
+                <div class="inner-box">
+                    <div class="image">
+                        <img src="{{asset('/images/service/thumb/thumb_'.@$service->banner_image)}}" alt="" />
+                        <div class="overlay-box">
+                            <div class="overlay-inner">
+                                <div class="content">
+                                    <div class="text"></div>
+                                    <a href="{{route('service.single',$service->slug)}}" class="read-more"><span class="fa fa-angle-right"></span> Read More</a>
                                 </div>
                             </div>
-
-                            <!--Column-->
-                            <div class="column counter-column col-md-4 col-sm-6 col-xs-12">
-                                <div class="inner">
-                                    <div class="content">
-                                        <div class="count-outer count-box alternate">
-                                            <span class="count-text" data-speed="3000" data-stop="975">0</span>+
-                                        </div>
-                                        <h4 class="counter-title">Orders in queue</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Column-->
-                            <div class="column counter-column col-md-4 col-sm-6 col-xs-12">
-                                <div class="inner">
-                                    <div class="content">
-                                        <div class="count-outer count-box">
-                                            <span class="count-text" data-speed="3000" data-stop="318">0</span>+
-                                        </div>
-                                        <h4 class="counter-title">activated clients</h4>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
-
+                    <div class="lower-box">
+                        <div class="category">MD Human Resource</div>
+                        <h3><a href="{{route('service.single',$service->slug)}}">{{ucwords(@$service->title)}}</a></h3>
+                    </div>
                 </div>
             </div>
+            @endforeach
 
         </div>
     </section>
-    <!--End Offer Section-->
-
+    <!--End Case Section-->
     <!--Case Section-->
     <section class="case-section">
         <div class="auto-container">

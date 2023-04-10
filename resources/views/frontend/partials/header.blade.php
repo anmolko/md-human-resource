@@ -118,7 +118,9 @@
                 <div class="clearfix">
 
                     <div class="pull-left logo-box">
-                        <div class="logo"><a href="/"><img src="{{asset('assets/frontend/images/logo.png')}}" alt="" title=""></a></div>
+                        <div class="logo"><a href="/">
+                                <img style="height: 60px" src="{{asset('/images/settings/'.@$setting_data->logo)}}" alt=""></a>
+                        </div>
                     </div>
 
                     <div class="nav-outer clearfix">
@@ -135,75 +137,49 @@
 
                             <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="#">Home</a>
-                                        <ul>
-                                            <li><a href="index-2.html">Home Page 01</a></li>
-                                            <li><a href="index-3.html">Home Page 02</a></li>
-                                            <li><a href="index-4.html">Home Page 03</a></li>
-                                            <li><a href="index-5.html">Home Page 04</a></li>
-                                            <li><a href="index-6.html">Home Page 05</a></li>
-                                            <li class="dropdown"><a href="#">Header Styles</a>
-                                                <ul>
-                                                    <li><a href="index-2.html">Header Style 01</a></li>
-                                                    <li><a href="index-3.html">Header Style 02</a></li>
-                                                    <li><a href="index-4.html">Header Style 03</a></li>
-                                                    <li><a href="index-5.html">Header Style 04</a></li>
-                                                    <li><a href="index-6.html">Header Style 05</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">About</a>
-                                        <ul>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="team.html">Team</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Services</a>
-                                        <ul>
-                                            <li><a href="services-one.html">Services Type 01</a></li>
-                                            <li><a href="services-two.html">Services Type 02</a></li>
-                                            <li><a href="financial-investment.html">Financial Investment</a></li>
-                                            <li><a href="market-research.html">Market Research</a></li>
-                                            <li><a href="feasibility.html">Feasibility Studies</a></li>
-                                            <li><a href="business-consult.html">Business Consulting</a></li>
-                                            <li><a href="growth-track.html">Growth Tracking</a></li>
-                                            <li><a href="training-work.html">Training & Workshop</a></li>
-                                            <li><a href="investment-plan.html">Investment Planning</a></li>
-                                            <li><a href="global-coach.html">Global Coaching</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Portfolio</a>
-                                        <ul>
-                                            <li><a href="portfolio-two-column.html">Portfolio Two Column</a></li>
-                                            <li><a href="portfolio-three-column.html">Portfolio Three Column</a></li>
-                                            <li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
-                                            <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Blog</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog Grid Style</a></li>
-                                            <li><a href="blog-left.html">Blog Left Sidebar</a></li>
-                                            <li><a href="blog-classic.html">Blog Fullwidth</a></li>
-                                            <li><a href="blog-single.html">Blog Single Post</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact us</a></li>
+                                    <li class="current"><a href="/">Home</a></li>
+                                    @if(!empty($top_nav_data))
+                                        @foreach($top_nav_data as $nav)
+                                            @if(!empty($nav->children[0]))
+                                                <li class="dropdown">
+                                                    <a href="#">{{ @$nav->name ?? @$nav->title }}</a>
+                                                    <ul>
+                                                        @foreach($nav->children[0] as $childNav)
+                                                            <li class="{{!empty($childNav->children[0]) ? 'dropdown':''}}">
+                                                                <a href="{{get_menu_url($childNav->type, $childNav)}}" target="{{@$childNav->target ? '_blank':''}}">
+                                                                    {{ @$childNav->name ?? @$childNav->title ??''}}</a>
+                                                                @if(!empty($childNav->children[0]))
+                                                                    <ul>
+                                                                        @foreach($childNav->children[0] as $key => $lastchild)
+
+                                                                            <li>
+                                                                                <a href="{{get_menu_url($lastchild->type, $lastchild)}}" target="{{@$lastchild->target ? '_blank':''}}">
+                                                                                    {{ @$lastchild->name ?? @$lastchild->title ?? ''}}</a>
+                                                                            </li>
+                                                                        @endforeach
+                                                                    </ul>
+                                                                @endif
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        <li>
+                                            <a href="{{get_menu_url($nav->type, $nav)}}" target="{{@$nav->target ? '_blank':''}}">
+                                                {{ @$nav->name ?? @$nav->title ??''}}
+                                            </a>
+                                        </li>
+                                    @endif
                                 </ul>
                             </div>
-
                         </nav>
 
-                        <!--Support Box-->
-                        <div class="support-box">
-                            <div class="support">For Support Call <span class="icon fa fa-headphones"></span></div>
-                            <div class="support-number">800-369-8527</div>
-                        </div>
 
-                        <!--Button Box-->
                         <div class="button-box">
-                            <a href="contact.html" class="theme-btn btn-style-one">Ask For Quote</a>
+                            <a href="{{route('contact')}}" class="theme-btn btn-style-one">Reach out</a>
                         </div>
 
                         <!--Search Box Outer-->
@@ -213,9 +189,9 @@
                                 <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
                                     <li class="panel-outer">
                                         <div class="form-container">
-                                            <form method="post" action="http://t.commonsupport.xyz/zemen/blog.html">
+                                            <form method="get" id="searchform" action="{{route('searchJob')}}">
                                                 <div class="form-group">
-                                                    <input type="search" name="field-name" value="" placeholder="Search Here" required>
+                                                    <input  id="s" name="s" type="text" class="form-control" placeholder="Find Jobs here.." oninvalid="this.setCustomValidity('Type a keyword')" oninput="this.setCustomValidity('')" required>
                                                     <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
                                                 </div>
                                             </form>
@@ -237,7 +213,9 @@
             <div class="auto-container clearfix">
                 <!--Logo-->
                 <div class="logo pull-left">
-                    <a href="index-2.html" class="img-responsive"><img src="images/logo-small.png" alt="" title=""></a>
+                    <a href="/" class="img-responsive">
+                        <img style="height: 60px" src="{{asset('/images/settings/'.@$setting_data->logo)}}" alt="">
+                    </a>
                 </div>
 
                 <!--Right Col-->
@@ -252,61 +230,42 @@
 
                         <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
                             <ul class="navigation clearfix">
-                                <li class="current dropdown"><a href="#">Home</a>
-                                    <ul>
-                                        <li><a href="index-2.html">Home Page 01</a></li>
-                                        <li><a href="index-3.html">Home Page 02</a></li>
-                                        <li><a href="index-4.html">Home Page 03</a></li>
-                                        <li><a href="index-5.html">Home Page 04</a></li>
-                                        <li><a href="index-6.html">Home Page 05</a></li>
-                                        <li class="dropdown"><a href="#">Header Styles</a>
-                                            <ul>
-                                                <li><a href="index-2.html">Header Style 01</a></li>
-                                                <li><a href="index-3.html">Header Style 02</a></li>
-                                                <li><a href="index-4.html">Header Style 03</a></li>
-                                                <li><a href="index-5.html">Header Style 04</a></li>
-                                                <li><a href="index-6.html">Header Style 05</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">About</a>
-                                    <ul>
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="team.html">Team</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Services</a>
-                                    <ul>
-                                        <li><a href="services-one.html">Services Type 01</a></li>
-                                        <li><a href="services-two.html">Services Type 02</a></li>
-                                        <li><a href="financial-investment.html">Financial Investment</a></li>
-                                        <li><a href="market-research.html">Market Research</a></li>
-                                        <li><a href="feasibility.html">Feasibility Studies</a></li>
-                                        <li><a href="business-consult.html">Business Consulting</a></li>
-                                        <li><a href="growth-track.html">Growth Tracking</a></li>
-                                        <li><a href="training-work.html">Training & Workshop</a></li>
-                                        <li><a href="investment-plan.html">Investment Planning</a></li>
-                                        <li><a href="global-coach.html">Global Coaching</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Portfolio</a>
-                                    <ul>
-                                        <li><a href="portfolio-two-column.html">Portfolio Two Column</a></li>
-                                        <li><a href="portfolio-three-column.html">Portfolio Three Column</a></li>
-                                        <li><a href="portfolio-masonry.html">Portfolio Masonry</a></li>
-                                        <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">Blog</a>
-                                    <ul>
-                                        <li><a href="blog.html">Blog Grid Style</a></li>
-                                        <li><a href="blog-left.html">Blog Left Sidebar</a></li>
-                                        <li><a href="blog-classic.html">Blog Fullwidth</a></li>
-                                        <li><a href="blog-single.html">Blog Single Post</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li class="current"><a href="/">Home</a></li>
+                                @if(!empty($top_nav_data))
+                                    @foreach($top_nav_data as $nav)
+                                        @if(!empty($nav->children[0]))
+                                            <li class="current dropdown">
+                                                <a href="#">{{ @$nav->name ?? @$nav->title }}</a>
+                                                <ul>
+                                                    @foreach($nav->children[0] as $childNav)
+                                                        <li class="{{!empty($childNav->children[0]) ? 'dropdown':''}}">
+                                                            <a href="{{get_menu_url($childNav->type, $childNav)}}" target="{{@$childNav->target ? '_blank':''}}">
+                                                                {{ @$childNav->name ?? @$childNav->title ??''}}</a>
+                                                            @if(!empty($childNav->children[0]))
+                                                                <ul>
+                                                                    @foreach($childNav->children[0] as $key => $lastchild)
+
+                                                                        <li>
+                                                                            <a href="{{get_menu_url($lastchild->type, $lastchild)}}" target="{{@$lastchild->target ? '_blank':''}}">
+                                                                                {{ @$lastchild->name ?? @$lastchild->title ?? ''}}</a>
+                                                                        </li>
+                                                                    @endforeach
+                                                                </ul>
+                                                            @endif
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                @else
+                                    <li>
+                                        <a href="{{get_menu_url($nav->type, $nav)}}" target="{{@$nav->target ? '_blank':''}}">
+                                            {{ @$nav->name ?? @$nav->title ??''}}
+                                        </a>
+                                    </li>
+                                @endif
                             </ul>
                         </div>
                     </nav><!-- Main Menu End-->

@@ -232,14 +232,6 @@
                                                         <input type="text" class="form-control" id="welcome-video-input" name="welcome_video_link" value="{{@$homesettings->welcome_video_link}}"
                                                                placeholder="Enter video link">
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label for="choices-publish-status-input" class="form-label">Image Alignment</label>
-
-                                                        <select class="form-select" id="choices-publish-status-input" name="welcome_side_image" data-choices data-choices-search-false>
-                                                            <option value="left" @if(@$homesettings->welcome_side_image == "left") selected @endif>Left</option>
-                                                            <option value="right" @if(@$homesettings->welcome_side_image == "right") selected @endif>Right</option>
-                                                        </select>
-                                                    </div>
                                                 </div>
                                                 <!-- end card body -->
                                             </div>
