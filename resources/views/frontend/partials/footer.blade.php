@@ -171,6 +171,8 @@
 <script src="{{asset('assets/frontend/js/wow.js')}}"></script>
 <script src="{{asset('assets/frontend/js/slick.js')}}"></script>
 <script src="{{asset('assets/frontend/js/jquery-ui.js')}}"></script>
+<script src="{{asset('assets/frontend/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('assets/frontend/js/swiper.min.js')}}"></script>
 <script src="{{asset('assets/frontend/js/script.js')}}"></script>
 
 </body>

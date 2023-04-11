@@ -55,7 +55,7 @@
 
                             <div class="form-group mb-3">
                                 <label>Description <span class="text-muted text-danger">*</span></label>
-                                <textarea class="form-control" rows="6" maxlength="1120" name="description" id="ckeditor-classic-director-one" required></textarea>
+                                <textarea class="form-control" rows="16" maxlength="800" name="description" id="ckeditor-classic-director-one" required></textarea>
                                 <div class="invalid-feedback">
                                     Please write the short description
                                 </div>
@@ -206,7 +206,7 @@
 
                                         <div class="form-group mb-3">
                                             <label>Description <span class="text-muted text-danger">*</span></label>
-                                            <textarea class="form-control" rows="6" maxlength="1120" name="description" id="ckeditor-classic-director" required></textarea>
+                                            <textarea class="form-control" rows="16" maxlength="800" name="description" id="ckeditor-classic-director" required></textarea>
                                             <div class="invalid-feedback">
                                                 Please write the short description
                                             </div>

@@ -445,34 +445,34 @@
                 <div class="swiper-wrapper">
                     @foreach($director as $managing)
                         <div class="swiper-slide sc-about-content-area sc-pt-40 sc-pb-40 position-relative p-z-idex d-flex align-items-center sc-md-pt-80 sc-md-pb-80">
-                        <div class="sc-details-social col-lg-5 md-mb-50" data-sal="slide-right" data-sal-duration="800">
-                            <div class="inner-column">
-                                <div class="image">
-                                    <img src="{{asset('/images/director/'.@$managing->image)}}" alt="" />
+                            <div class="sc-details-social col-lg-5 md-mb-50" data-sal="slide-right" data-sal-duration="800">
+                                <div class="inner-column">
+                                    <div class="image">
+                                        <img src="{{asset('/images/director/'.@$managing->image)}}" alt="" />
+                                    </div>
+                                    <div class="team-content text-center">
+                                        <h3 class="team-title title-color">{{ucfirst(@$managing->heading)}}</h3>
+                                        <div class="text">{{ucfirst(@$managing->designation)}}</div>
+                                    </div>
                                 </div>
-                                <div class="team-content text-center">
-                                    <h3 class="team-title title-color">{{ucfirst(@$managing->heading)}}</h3>
-                                    <div class="text">{{ucfirst(@$managing->designation)}}</div>
+                            </div>
+                            <div class="sc-about-text-box sc-md-mt-50 sc-pl-80 sc-md-pl-0"
+                                data-sal="slide-left"
+                                data-sal-duration="800">
+                                <div class="sc-heading-area sc-mb-35">
+                                    <span class="sub-title"><i class="icon-line"></i> Our Stories</span>
+                                    <h2 class="title">
+                                        Message From <span class="primary-color italic">Director</span>
+                                    </h2>
+                                    <p class="des">
+                                        {{@$managing->description}}
+                                    </p>
+                                </div>
+                                <div class="sc-about-shape">
+                                    <img src="{{asset('assets/frontend/images/icons/about-shape.png')}}" alt="Shape" />
                                 </div>
                             </div>
                         </div>
-                        <div class="sc-about-text-box sc-md-mt-50 sc-pl-80 sc-md-pl-0"
-                            data-sal="slide-left"
-                            data-sal-duration="800">
-                            <div class="sc-heading-area sc-mb-35">
-                                <span class="sub-title"><i class="icon-line"></i> Our Stories</span>
-                                <h2 class="title">
-                                    Message From <span class="primary-color italic">Director</span>
-                                </h2>
-                                <p class="des">
-                                    {{@$managing->description}}
-                                </p>
-                            </div>
-                            <div class="sc-about-shape">
-                                <img src="{{asset('assets/frontend/images/icons/about-shape.png')}}" alt="Shape" />
-                            </div>
-                        </div>
-                    </div>
                     @endforeach
                 </div>
             </div>

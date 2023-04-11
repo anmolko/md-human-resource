@@ -243,8 +243,8 @@
         </section>
     @endif
 
-    <!--Case Section-->
-    <section class="case-section">
+    @if(count($latestServices) > 0)
+        <section class="case-section">
         <div class="auto-container">
             <!--Sec Title-->
             <div class="sec-title centered">
@@ -278,189 +278,42 @@
 
         </div>
     </section>
-    <!--End Case Section-->
-    <!--Case Section-->
-    <section class="case-section">
-        <div class="auto-container">
-            <!--Sec Title-->
-            <div class="sec-title centered">
-                <h2>zemen Case Studies</h2>
-                <div class="title-text">Automate & Simplify The Whole Process</div>
-            </div>
-        </div>
-        <div class="four-item-carousel owl-carousel owl-theme">
+    @endif
 
-            <!--Case Block-->
-            <div class="case-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/resource/case-1.jpg" alt="" />
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
+    @if(count($director) > 0)
+        <section class="help-section director-swiper-slider">
+            <div class="auto-container swiper-wrapper">
+                @foreach($director as $managing)
+                    <div class="inner-container clearfix swiper-slide">
+
+                        <div class="content-column">
+                            <div class="inner-column">
                                 <div class="content">
-                                    <div class="text">Lorem ipsum dolor sit amet adipisicing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Utna enim ad minim veniam quis nostrud exercitation ulamco laboris nisi aliquip exea comm ayodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</div>
-                                    <a href="global-coach.html" class="read-more"><span class="fa fa-angle-right"></span> Read More</a>
+                                    <div class="sec-title">
+                                        <h2>{{ucfirst(@$managing->heading)}}</h2>
+                                        <div class="title-text">{{ucfirst(@$managing->designation)}}</div>
+                                    </div>
+                                    <div class="text">
+                                        {{@$managing->description}}
+                                    </div>
+                                    <a class="risk"><span class="fa fa-angle-right"></span> Message from Director </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="category">case study - strategies</div>
-                        <h3><a href="global-coach.html">Global Business Managment Tracking Apps</a></h3>
-                    </div>
-                </div>
-            </div>
 
-            <!--Case Block-->
-            <div class="case-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/resource/case-2.jpg" alt="" />
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="content">
-                                    <div class="text">Lorem ipsum dolor sit amet adipisicing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Utna enim ad minim veniam quis nostrud exercitation ulamco laboris nisi aliquip exea comm ayodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</div>
-                                    <a href="global-coach.html" class="read-more"><span class="fa fa-angle-right"></span> Read More</a>
+                        <div class="image-column-2" style="background-image: url({{asset('/images/director/'.@$managing->image)}})">
+                            <div class="inner-column">
+                                <div class="image">
+                                    <img src="{{asset('/images/director/'.@$managing->image)}}" alt="" />
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="category">case study - managment</div>
-                        <h3><a href="global-coach.html">Business & Planning With Task Completion</a></h3>
-                    </div>
-                </div>
-            </div>
 
-            <!--Case Block-->
-            <div class="case-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/resource/case-3.jpg" alt="" />
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="content">
-                                    <div class="text">Lorem ipsum dolor sit amet adipisicing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Utna enim ad minim veniam quis nostrud exercitation ulamco laboris nisi aliquip exea comm ayodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</div>
-                                    <a href="global-coach.html" class="read-more"><span class="fa fa-angle-right"></span> Read More</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="lower-box">
-                        <div class="category">case study - corporate</div>
-                        <h3><a href="global-coach.html">Business & Planning With Task Completion</a></h3>
-                    </div>
-                </div>
+                @endforeach
             </div>
-
-            <!--Case Block-->
-            <div class="case-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/resource/case-4.jpg" alt="" />
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="content">
-                                    <div class="text">Lorem ipsum dolor sit amet adipisicing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Utna enim ad minim veniam quis nostrud exercitation ulamco laboris nisi aliquip exea comm ayodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</div>
-                                    <a href="global-coach.html" class="read-more"><span class="fa fa-angle-right"></span> Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="category">case study - financial</div>
-                        <h3><a href="global-coach.html">Full Training & Workshop Inventory System</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!--Case Block-->
-            <div class="case-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/resource/case-1.jpg" alt="" />
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="content">
-                                    <div class="text">Lorem ipsum dolor sit amet adipisicing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Utna enim ad minim veniam quis nostrud exercitation ulamco laboris nisi aliquip exea comm ayodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</div>
-                                    <a href="global-coach.html" class="read-more"><span class="fa fa-angle-right"></span> Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="category">case study - strategies</div>
-                        <h3><a href="global-coach.html">Global Business Managment Tracking Apps</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!--Case Block-->
-            <div class="case-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/resource/case-2.jpg" alt="" />
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="content">
-                                    <div class="text">Lorem ipsum dolor sit amet adipisicing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Utna enim ad minim veniam quis nostrud exercitation ulamco laboris nisi aliquip exea comm ayodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</div>
-                                    <a href="global-coach.html" class="read-more"><span class="fa fa-angle-right"></span> Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="category">case study - managment</div>
-                        <h3><a href="global-coach.html">Business & Planning With Task Completion</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!--Case Block-->
-            <div class="case-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/resource/case-3.jpg" alt="" />
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="content">
-                                    <div class="text">Lorem ipsum dolor sit amet adipisicing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Utna enim ad minim veniam quis nostrud exercitation ulamco laboris nisi aliquip exea comm ayodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</div>
-                                    <a href="global-coach.html" class="read-more"><span class="fa fa-angle-right"></span> Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="category">case study - corporate</div>
-                        <h3><a href="global-coach.html">Business & Planning With Task Completion</a></h3>
-                    </div>
-                </div>
-            </div>
-
-            <!--Case Block-->
-            <div class="case-block">
-                <div class="inner-box">
-                    <div class="image">
-                        <img src="images/resource/case-4.jpg" alt="" />
-                        <div class="overlay-box">
-                            <div class="overlay-inner">
-                                <div class="content">
-                                    <div class="text">Lorem ipsum dolor sit amet adipisicing elit sed eiusmod tempor incididunt ut labore et dolore magna aliqua. Utna enim ad minim veniam quis nostrud exercitation ulamco laboris nisi aliquip exea comm ayodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</div>
-                                    <a href="global-coach.html" class="read-more"><span class="fa fa-angle-right"></span> Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lower-box">
-                        <div class="category">case study - financial</div>
-                        <h3><a href="global-coach.html">Full Training & Workshop Inventory System</a></h3>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!--End Case Section-->
+        </section>
+    @endif
 
     <!--Testimonial Section-->
     <section class="testimonial-section">

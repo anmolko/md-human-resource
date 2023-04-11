@@ -59,12 +59,12 @@ class ManagingDirectorController extends Controller
 
         if(!empty($request->file('image'))){
             $image        = $request->file('image');
-            $name         = uniqid().'_director_'.$image->getClientOriginalName();
+            $name         = uniqid().'_director_'.trim(preg_replace('/\s*\([^)]*\)/', '', $image->getClientOriginalName()));
             if (!is_dir($this->path)) {
                 mkdir($this->path, 0777);
             }
             $path         = base_path().'/public/images/director/';
-            $moved        = Image::make($image->getRealPath())->fit('530','500')->orientate()->save($path.$name);
+            $moved        = Image::make($image->getRealPath())->fit('530','600')->orientate()->save($path.$name);
             if ($moved){
                 $data['image']= $name;
             }
@@ -135,9 +135,9 @@ class ManagingDirectorController extends Controller
 
         if (!empty($request->file('image'))){
             $image                = $request->file('image');
-            $name                 = uniqid().'_director_'.$image->getClientOriginalName();
+            $name                 = uniqid().'_director_'.trim(preg_replace('/\s*\([^)]*\)/', '', $image->getClientOriginalName()));
             $path                 = base_path().'/public/images/director/';
-            $moved                = Image::make($image->getRealPath())->fit('530','500')->orientate()->save($path.$name);
+            $moved                = Image::make($image->getRealPath())->fit('530','600')->orientate()->save($path.$name);
             if ($moved){
                 $director->image = $name;
                 if (!empty($oldimage) && file_exists(public_path().'/images/director/'.$oldimage)){

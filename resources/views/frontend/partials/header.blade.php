@@ -30,6 +30,8 @@
     <link href="{{asset('assets/frontend/css/style.css')}}" rel="stylesheet">
     <link href="{{asset('assets/frontend/css/slick.css')}}" rel="stylesheet">
     <link href="{{asset('assets/frontend/css/responsive.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/frontend/css/swiper.min.css')}}" />
+
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
