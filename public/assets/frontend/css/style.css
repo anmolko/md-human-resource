@@ -505,6 +505,12 @@ img{
 .sec-title.centered{
 	text-align: center;
 }
+.light-description{
+    color: #d9d5d5;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 26px;
+}
 
 /***
 
@@ -2769,7 +2775,7 @@ img{
 
 .fluid-section-two .image-column .image-box{
 	position:relative;
-	display:none;
+	/*display:none;*/
 }
 
 .fluid-section-two .image-column .image-box img{
@@ -2788,7 +2794,7 @@ img{
 	position:relative;
 	max-width:650px;
 	width:100%;
-	padding:100px 15px 100px 100px;
+	padding:100px 15px 100px 78px;
 }
 
 /***
@@ -5023,17 +5029,17 @@ img{
 	margin-right: -185px;
 }
 
-.expert-section .blocks-column .inner-column .owl-nav{
+.expert-section .blocks-column .inner-column .owl-nav, .expert-section .owl-nav{
 	display:none;
 }
 
-.expert-section .blocks-column .inner-column .owl-dots{
+.expert-section .blocks-column .inner-column .owl-dots, .expert-section .client-column .owl-dots{
 	position:relative;
 	text-align: center;
 	margin-top: 20px;
 }
 
-.expert-section .blocks-column .inner-column .owl-dots .owl-dot{
+.expert-section .blocks-column .inner-column .owl-dots .owl-dot, .expert-section .client-column .owl-dots .owl-dot{
 	position:relative;
 	width:10px;
 	height:8px;
@@ -5049,7 +5055,9 @@ img{
 }
 
 .expert-section .blocks-column .inner-column .owl-dots .owl-dot:hover,
-.expert-section .blocks-column .inner-column .owl-dots .owl-dot.active{
+.expert-section .blocks-column .inner-column .owl-dots .owl-dot.active,
+.expert-section .client-column .owl-dots .owl-dot:hover,
+.expert-section .client-column .owl-dots .owl-dot.active{
 	position:relative;
 	width:22px;
 	height:8px;

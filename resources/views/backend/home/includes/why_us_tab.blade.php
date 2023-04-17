@@ -16,15 +16,15 @@
                         </figure>
                         <div class="position-relative mb-3">
                             <label class="form-label">Heading <span class="text-muted text-danger">*</span></label>
-                            <input type="text" class="form-control" maxlength="35" name="why_heading" value="{{@$homesettings->why_heading}}"
+                            <input type="text" class="form-control" maxlength="25" name="why_heading" value="{{@$homesettings->why_heading}}"
                                    placeholder="Enter heading" required>
                             <div class="invalid-feedback">
                                 Please enter the heading.
                             </div>
                         </div>
                         <div class="position-relative mb-3">
-                            <label class="form-label">SubHeading</label>
-                            <input type="text" class="form-control" maxlength="30" name="why_subheading" value="{{@$homesettings->why_subheading}}"
+                            <label class="form-label">Small Description</label>
+                            <input type="text" class="form-control" maxlength="200" name="why_description" value="{{@$homesettings->why_description}}"
                                    placeholder="Enter subheading">
                             <div class="invalid-feedback">
                                 Please enter the heading.
@@ -33,7 +33,7 @@
 
                         <div class="position-relative mb-3">
                             <label class="form-label">Video Link <span class="text-muted text-danger">*</span></label>
-                            <input type="text" class="form-control" maxlength="120" name="why_description" value="{{@$homesettings->why_description}}"
+                            <input type="text" class="form-control" name="why_subheading" value="{{@$homesettings->why_subheading}}"
                                    placeholder="Enter youtube video link">
                             <div class="invalid-tooltip">
                                 Please enter the video link.
