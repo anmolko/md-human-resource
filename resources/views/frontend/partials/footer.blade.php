@@ -169,6 +169,7 @@
 <script src="{{asset('assets/frontend/js/appear.js')}}"></script>
 <script src="{{asset('assets/frontend/js/owl.js')}}"></script>
 <script src="{{asset('assets/frontend/js/wow.js')}}"></script>
+<script src="{{asset('assets/frontend/js/sticky.js')}}"></script>
 <script src="{{asset('assets/frontend/js/slick.js')}}"></script>
 <script src="{{asset('assets/frontend/js/jquery-ui.js')}}"></script>
 <script src="{{asset('assets/frontend/swiper/swiper-bundle.min.js')}}"></script>

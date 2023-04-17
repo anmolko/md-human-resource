@@ -7945,15 +7945,15 @@ img{
 	position:relative;
 }
 
-.styled-pagination .inner-box{
+.styled-pagination .inner-box, .styled-pagination .pagination {
 	position:relative;
 }
 
-.styled-pagination .inner-box li{
+.styled-pagination .inner-box li, .styled-pagination .pagination li{
 	position:relative;
 	display:block;
 	display:inline-block;
-	margin:0px 2px 0px 0px;
+	margin:0px 5px 0px 0px;
 }
 
 .styled-pagination .inner-box li.prev a,
@@ -7962,14 +7962,14 @@ img{
 	font-size: 20px;
 }
 
-.styled-pagination .inner-box li:last-child{
+.styled-pagination .inner-box li:last-child, .styled-pagination .pagination li:last-child{
 	margin-right:0px;
 }
 
-.styled-pagination .inner-box li a{
+.styled-pagination .inner-box li a, .styled-pagination .pagination li .page-link{
 	position:relative;
 	display:inline-block;
-	line-height:45px;
+	line-height:30px;
 	height:45px;
 	font-size:14px;
 	min-width:45px;
@@ -7996,15 +7996,41 @@ img{
 }
 
 .pagination-outer .styled-pagination .inner-box li.prev a:hover,
-.pagination-outer .styled-pagination .inner-box li.next a:hover{
+.pagination-outer .styled-pagination .inner-box li.next a:hover
+{
 	color:#ee2d50;
 }
 
 .styled-pagination .inner-box li a:hover,
-.styled-pagination .inner-box li a.active{
+.styled-pagination .inner-box li a.active,
+.styled-pagination .pagination li.active .page-link, .styled-pagination .pagination li .page-link:hover
+{
+    border: #ee2d50;
 	color:#ffffff;
 	background-color:#ee2d50;
 }
+.styled-pagination .pagination li.disabled{
+    display: none;
+}
+.styled-pagination .pagination li .page-link .fas{
+    display: inline-block;
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+    text-rendering: auto;
+    font-size: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+.styled-pagination .pagination li .page-link .fa-angle-left:before{
+    content: "\f100";
+
+}
+.styled-pagination .pagination li .page-link .fa-angle-right:before{
+    content: "\f101";
+}
+
 
 .blog-classic-section{
 	position: relative;

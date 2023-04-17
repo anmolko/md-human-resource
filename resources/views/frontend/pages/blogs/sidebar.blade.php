@@ -1,59 +1,54 @@
-<div class="sc-blog-widget-inner">
-    <form method="get" id="searchform" action="{{route('searchBlog')}}">
-        <div class="sc-searchbar-area sc-mb-30 p-z-idex d-flex align-items-center justify-content-end">
-            <div class="input-field">
-                <input
-                    type="text"
-                    id="s"
-                    name="s"
-                    placeholder="Search Blogs....."
-                    oninvalid="this.setCustomValidity('Type a keyword')" oninput="this.setCustomValidity('')" required
-                />
-            </div>
-            <div class="sc-submit sc-primary-btn">
-                <i class="icon-search"></i>
-                <input type="submit" id="search" />
-            </div>
+<aside class="sidebar">
+    <div class="sidebar-inner inner sticky-box">
+
+        <!-- Search -->
+        <div class="sidebar-widget search-box">
+            <form method="get" id="searchform" action="{{route('searchBlog')}}">
+                <div class="form-group">
+                    <input
+                        type="text"
+                        id="s"
+                        name="s"
+                        placeholder="Search Blogs....."
+                        oninvalid="this.setCustomValidity('Type a keyword')" oninput="this.setCustomValidity('')" required
+                    />
+                    <button type="submit"><span class="icon fa fa-search"></span></button>
+                </div>
+            </form>
         </div>
-    </form>
-    <div class="sc-blog-category sc-mb-30">
-        @if(!empty($bcategories))
-            <div class="sc-blog-title sc-mb-25">
-                <h5 class="title"><i class="icon-line"></i> Blog Category</h5>
-            </div>
-            <div class="category-list">
-                 <ul class="list-gap">
-                        @foreach(@$bcategories as $bcategory)
-                            <li>
-                                <a href="{{route('blog.category',$bcategory->slug)}}">
-                                    {{ucwords(@$bcategory->name)}} ({{$bcategory->blogs->count()}})<span><i class="icon-angle_right"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-            </div>
-        @endif
-    </div>
-    @if(!empty($latestPosts))
-        <div class="sc-blog-post sc-mb-30">
-            <div class="sc-blog-title sc-mb-20">
-                <h5 class="title"><i class="icon-line"></i> Recent Post</h5>
+
+        <!--Blog Category Widget-->
+        <div class="sidebar-widget sidebar-blog-category">
+            @if(!empty($bcategories))
+                <div class="sidebar-title">
+                    <h2>Categories</h2>
+                </div>
+                <ul class="blog-cat">
+                    @foreach(@$bcategories as $bcategory)
+                        <li><a href="{{route('blog.category',$bcategory->slug)}}">
+                                {{ucwords(@$bcategory->name)}} ({{$bcategory->blogs->count()}})
+                            </a></li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
+
+        <!--Popular Posts-->
+        <div class="sidebar-widget popular-posts">
+            <div class="sidebar-title">
+                <h2>Recent Posts</h2>
             </div>
             @foreach($latestPosts as $index => $latest)
-                <div class="sc-post-auother d-flex align-items-center">
-                    <div class="sc-auother-image sc-mr-20">
-                        <a href="#"><img src="{{(@$latest->image) ? asset('/images/blog/thumb/thumb_'.@$latest->image):''}}" /></a>
-                    </div>
-                    <div class="auother-text">
-                        <span class="date"><i class="icon-calender"></i>{{date('j M, Y',strtotime(@$latest->created_at))}}</span>
-                        <h5>
-                            <a class="title" href="{{route('blog.single',@$latest->slug)}}">{{ucwords(@$latest->title)}}</a>
-                        </h5>
-                    </div>
-                </div>
+                <article class="post">
+                    <figure class="post-thumb"><a href="{{route('blog.single',@$latest->slug)}}">
+                            <img src="{{(@$latest->image) ? asset('/images/blog/thumb/thumb_'.@$latest->image):''}}" alt=""></a>
+                    </figure>
+                    <div class="post-info">{{date('j M, Y',strtotime(@$latest->created_at))}}</div>
+                    <div class="text"><a href="{{route('blog.single',@$latest->slug)}}">{{ucwords(@$latest->title)}}</a></div>
+                </article>
             @endforeach
 
         </div>
-    @endif
-</div>
+
+    </div>
+</aside>
