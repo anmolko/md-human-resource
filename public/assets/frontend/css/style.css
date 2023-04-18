@@ -481,7 +481,7 @@ img{
 .sec-title h2{
 	position:relative;
 	color:#021529;
-	font-size:48px;
+	font-size:46px;
 	font-weight:600;
 	line-height:1.3em;
 	margin-bottom: 8px;
@@ -4603,6 +4603,9 @@ img{
 	position:relative;
 	padding-left: 50px;
 }
+.help-section .content-column .inner-column .text {
+    padding-left: 0px;
+}
 
 .help-section .content-column .inner-column .text:before{
 	position:absolute;
@@ -4613,6 +4616,10 @@ img{
 	font-size: 34px;
 	line-height: 1em;
 	font-family: "Flaticon";
+}
+
+.help-section .content-column .inner-column .dynamic-text:before{
+    content: "";
 }
 
 .help-section .content-column .inner-column .text p{

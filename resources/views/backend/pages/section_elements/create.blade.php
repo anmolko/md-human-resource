@@ -219,7 +219,7 @@
                                                             id="basic-image" onchange="loadbasicFile('basic-image','current-basic-img',event)" name="image" {{(@$basic_elements->id !== null) ? "":"required" }}
                                                             class="profile-foreground-img-file-input" >
 
-                                                    <figcaption class="figure-caption">Banner image for current basic section. (SIZE: 900 x 760px)</figcaption>
+                                                    <figcaption class="figure-caption">Banner image for current basic section. (SIZE:  570 x 655px)</figcaption>
                                                     <div class="invalid-feedback" >
                                                         Please select a image.
                                                     </div>

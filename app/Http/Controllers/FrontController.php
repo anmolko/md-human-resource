@@ -278,9 +278,6 @@ class FrontController extends Controller
             }
         }
 
-
-        dd($page_detail);
-
         return view('frontend.pages.dynamic_page',compact( 'page_detail','heading','subheading','sections','process_num','process_elements','map_descp','icon_title_elements','location_map','video_descp_elements','list_2','list_3','basic_elements','call1_elements','gallery2_elements','bgimage_elements','call2_elements','flash_elements','gallery_elements','header_descp_elements','accordian1_elements','accordian2_elements','slider_list_elements','contact_info_elements'));
 
     }

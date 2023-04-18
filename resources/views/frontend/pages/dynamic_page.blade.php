@@ -16,54 +16,53 @@
 
 @endsection
 @section('content')
-    <div class="sc-breadcrumb-style sc-pt-135 sc-pb-110">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="sc-slider-content p-z-idex">
-                        <div class="sc-slider-subtitle">Home - Page</div>
-                        <h1 class="slider-title white-color sc-mb-25 sc-sm-mb-15">{{ucwords(@$page_detail->name)}}</h1>
-                    </div>
-                </div>
-            </div>
+    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
+        <div class="auto-container">
+            <h1>Page</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="/">home</a></li>
+                <li>{{ucwords(@$page_detail->name)}}</li>
+            </ul>
         </div>
-    </div>
-
+    </section>
     @foreach($sections as $key=>$value)
 
         @if($value == "basic_section")
-            <div class="sc-about-area sc-about-section-two position-relative sc-pb-10">
-                <div class="container-fluid sc-pl-0 sc-md-pr-20 sc-md-pl-20">
-                    <div class="sc-about-content-area sc-pt-40 sc-pb-40 position-relative p-z-idex d-flex align-items-center sc-md-pt-80 sc-md-pb-80">
-                        <div class="sc-about-bg-image" data-sal="slide-right" data-sal-duration="800">
-                            <img src="{{asset('/images/section_elements/basic_section/'.@$basic_elements->image) }}" alt="About" />
-                        </div>
-                        <div class="sc-about-text-box sc-md-mt-50 sc-pl-30 sc-md-pl-0" data-sal="slide-left" data-sal-duration="800">
-                            <div class="sc-heading-area sc-mb-35">
-                                <span class="sub-title"><i class="icon-line"></i> {{$basic_elements->subheading??'MD Human resource'}}</span>
-                                <h2 class="title">
-                                    <?php
-                                    $split = explode(" ", @$basic_elements->heading);?> {{preg_replace('/\W\w+\s*(\W*)$/', '$1', ucwords(@$basic_elements->heading))."\n"}}
-                                    <span class="primary-color italic"> {{$split[count($split)-1]}} </span>
-                                </h2>
-                                <div class="des">
-                                    {!! @$basic_elements->description !!}
-                                </div>
-                                @if(@$basic_elements->button_link)
-                                    <div class="slider-btn-area sc-ab-area mt-3 d-flex align-items-center">
-                                        <div class="sc-slider-btn sc-mr-20">
-                                            <a class="sc-primary-btn" href="{{@$basic_elements->button_link}}">{{ucwords(@$basic_elements->button ?? 'Discover More')}}</a>
-                                        </div>
+
+            <section class="help-section">
+                <div class="auto-container">
+                    <div class="inner-container clearfix">
+                        <!--Content Column-->
+                        <div class="content-column">
+                            <div class="inner-column">
+                                <div class="content">
+                                    <div class="sec-title">
+                                        <div class="title-text">{{$basic_elements->subheading??'MD Human resource'}}</div>
+                                        <h2>{{$basic_elements->heading}}</h2>
                                     </div>
-                                @endif
+                                    <div class="text dynamic-text">
+                                        {!! @$basic_elements->description !!}
+                                    </div>
+                                    @if(@$basic_elements->button_link)
+                                        <a class="risk" href="{{@$basic_elements->button_link}}">
+                                            <span class="fa fa-angle-right"></span>
+                                            {{ucwords(@$basic_elements->button ?? 'Discover More')}}
+                                        </a>
+                                    @endif
+                                </div>
                             </div>
-                            <div class="sc-about-shape">
-                                <img src="{{asset('assets/frontend/images/icons/about-shape.png')}}" alt="Shape" />
+                        </div>
+                        <!--Image Column-->
+                        <div class="image-column" style="background-image: url({{asset('/images/section_elements/basic_section/'.@$basic_elements->image) }})">
+                            <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                <div class="image">
+                                    <img src="{{asset('/images/section_elements/basic_section/'.@$basic_elements->image) }}" alt="" />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         @endif
 
         @if($value == "call_to_action_1")

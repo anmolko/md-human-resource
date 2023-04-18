@@ -160,7 +160,7 @@ class SectionElementController extends Controller
                 $image        = $request->file('image');
                 $name         = uniqid().'_basic_'.$image->getClientOriginalName();
                 $path         = base_path().'/public/images/section_elements/basic_section/';
-                $moved        = Image::make($image->getRealPath())->fit(900, 760)->orientate()->save($path.$name);
+                $moved        = Image::make($image->getRealPath())->fit(570, 655)->orientate()->save($path.$name);
                 if ($moved){
                     $data['image']= $name;
                 }
