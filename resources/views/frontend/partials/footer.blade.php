@@ -115,18 +115,18 @@
                                 <!--Social Icon One-->
                                 <ul class="social-icon-one mt-3">
                                     @if(@$setting_data->facebook)
-                                        <li><a href="{{@$setting_data->facebook}}"><span class="fa fa-facebook"></span></a></li>
+                                        <li><a href="{{@$setting_data->facebook}}"><span class="fa-brands fa-facebook"></span></a></li>
                                     @endif
                                     @if(@$setting_data->youtube)
-                                        <li><a href="{{@$setting_data->youtube}}"><span class="fa fa-youtube"></span></a></li>
+                                        <li><a href="{{@$setting_data->youtube}}"><span class="fa-brands fa-youtube"></span></a></li>
 
                                     @endif
                                     @if(@$setting_data->instagram)
-                                        <li><a href="{{@$setting_data->instagram}}"><span class="fa fa-instagram"></span></a></li>
+                                        <li><a href="{{@$setting_data->instagram}}"><span class="fa-brands fa-instagram"></span></a></li>
 
                                     @endif
                                     @if(@$setting_data->linkedin)
-                                        <li><a href="{{@$setting_data->linkedin}}"><span class="fa fa-linkedin"></span></a></li>
+                                        <li><a href="{{@$setting_data->linkedin}}"><span class="fa-brands fa-linkedin"></span></a></li>
                                     @endif
                                     @if(!empty(@$setting_data->ticktock))
                                         <li><a href="{{@$setting_data->ticktock}}"><span class="fa-brands fa-tiktok"></span></a></li>

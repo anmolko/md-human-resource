@@ -37,9 +37,11 @@
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <a href="{{route('job.single',@$job->slug)}}" class="link"><span class="icon fa fa-link"></span></a>
+                                                <a href="{{route('job.single',@$job->slug)}}" class="link">
+                                                    <span class="icon fa fa-link" style="margin-top: 15px;"></span>
+                                                </a>
                                                 <a href="{{ ($job->image !== null) ? asset('/images/job/'.@$job->image): asset('assets/frontend/images/oamama_thumb.png')}}" data-fancybox="gallery-images-1" data-caption="" class="link">
-                                                    <span class="icon fa fa-search"></span></a>
+                                                    <span class="icon fa fa-search" style="margin-top: 15px;"></span></a>
                                             </div>
                                         </div>
                                     </div>

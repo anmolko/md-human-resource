@@ -3,54 +3,53 @@
 @section('styles')
 @endsection
 @section('content')
-    <div class="sc-breadcrumb-style sc-pt-135 sc-pb-110">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="sc-slider-content p-z-idex">
-                        <div class="sc-slider-subtitle">Home - Our Albums</div>
-                        <h1 class="slider-title white-color sc-mb-25 sc-sm-mb-15">Album</h1>
-                    </div>
-                </div>
-            </div>
+    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
+        <div class="auto-container">
+            <h1>Our Albums</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="/">home</a></li>
+                <li>Album</li>
+            </ul>
         </div>
-    </div>
+    </section>
 
-    <div class="sc-project-section-area sc-pt-120 sc-md-pt-80 sc-pb-160 sc-md-pb-100">
-        <div class="container sc-project-container">
+    <section class="portfolio-page-section">
+        <div class="auto-container">
             @if(count(@$albums) > 0)
-                <div class="row">
+                <div class="mixitup-gallery">
+                <div class="row clearfix">
                     @foreach($albums as $album)
-                        <div class="col-md-4 mt-4">
-                            <div class="sc-project-item">
-                                <a href="{{route('album.gallery',$album->slug)}}"></a>
-                                <img src="{{asset('/images/albums/'.@$album->cover_image)}}"/>
-                                <div class="sc-project-content-box">
-                                    <div class="sc-project-icon">
-                                        <a href="{{route('album.gallery',$album->slug)}}"><i class="icon-sliuder-arrow2"></i></a>
+                        <div class="gallery-block col-lg-4 col-md-4 col-sm-12">
+                            <div class="inner-box">
+                                <div class="image">
+                                    <img src="{{asset('/images/albums/'.@$album->cover_image)}}" alt="" />
+                                    <!--Overlay Box-->
+                                    <div class="overlay-box">
+                                        <div class="overlay-inner">
+                                            <div class="content">
+                                                <a href="{{route('album.gallery',$album->slug)}}" class="link">
+                                                    <span class="icon fa fa-link" style="margin-top: 15px;"></span>
+                                                </a>
+                                                <a href="{{asset('/images/albums/'.@$album->cover_image)}}" data-fancybox="gallery-images-1" data-caption="" class="link">
+                                                    <span class="icon fa fa-search" style="margin-top: 15px;"></span></a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="sc-project-text">
-                                        <span class="sub-title">Images: ({{count(@$album->gallery)}})</span>
-                                        <h4><a class="title" href="{{route('album.gallery',$album->slug)}}">{{ucwords(@$album->name)}}</a></h4>
+                                </div>
+                                <div class="lower-content">
+                                    <h3><a href="{{route('album.gallery',$album->slug)}}">{{ucwords(@$album->name)}}</a></h3>
+                                    <div class="designation">
+                                        Images: ({{count(@$album->gallery)}})
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
-            @else
-                <div id="sc-page-error" class="sc-page-error">
-                    <div class="error-text">
-                        <h1 class="error-code sc-mb-30">404</h1>
-                        <h3 class="error-message sc-mb-30">Albums Not Found</h3>
-                        <div class="sc-error-btn">
-                            <a class="sc-primary-btn" href="/">Back to Homepage </a>
-                        </div>
-                    </div>
-                </div>
+            </div>
             @endif
         </div>
-    </div>
+    </section>
 @endsection
 
 
