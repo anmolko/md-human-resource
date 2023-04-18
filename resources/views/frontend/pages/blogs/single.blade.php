@@ -21,7 +21,7 @@
         <div class="auto-container">
             <h1>Blog details</h1>
             <ul class="page-breadcrumb">
-                <li><a href="/">home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="{{route('blog.frontend')}}">Blog</a></li>
                 <li>{{ @$singleBlog->title }}</li>
             </ul>

@@ -3,10 +3,10 @@
 @section('css')
 @endsection
 @section('seo')
-    <title>{{ucfirst(@$singleJob->name)}} | @if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource @endif</title>
+    <title>{{ucfirst(@$singleJob->name)}} | {{ucwords(@$setting_data->website_name ?? 'MD Human resource')}}</title>
     <meta name='description' itemprop='description'  content='{{ucfirst(@$singleJob->meta_description)}}' />
     <meta name='keywords' content='{{ucfirst(@$singleJob->meta_tags)}}' />
-    <meta property='article:published_time' content='<?php if(@$singleJob->updated_at !=''){?>{{@$singleJob->updated_at}} <?php }else {?> {{@$singleJob->created_at}} <?php }?>' />
+    <meta property='article:published_time' content='{{@$singleJob->updated_at ?? @$singleJob->created_at}}' />
     <meta property='article:section' content='article' />
     <meta property="og:description" content="{{ucfirst(@$singleJob->meta_description)}}" />
     <meta property="og:title" content="{{ucfirst(@$singleJob->meta_title)}}" />
@@ -14,116 +14,157 @@
     <meta property="og:type" content="Coperation" />
     <meta property="og:locale" content="en-us" />
     <meta property="og:locale:alternate"  content="en-us" />
-    <meta property="og:site_name" content="@if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource@endif" />
-    <meta property="og:image" content="<?php if(@$singleJob->image){?>{{asset('/images/job/'.@$singleJob->image)}}<?php }?>" />
-    <meta property="og:image:url" content="<?php if(@$singleJob->image){?>{{asset('/images/job/'.@$singleJob->image)}}<?php }?>" />
+    <meta property="og:site_name" content="{{ucwords(@$setting_data->website_name ?? 'MD Human resource')}}" />
+    <meta property="og:image" content="{{asset('/images/job/'.@$singleJob->image)}}" />
+    <meta property="og:image:url" content="{{asset('/images/job/'.@$singleJob->image)}}" />
     <meta property="og:image:size" content="300" />
 @endsection
 @section('content')
-
-    <div class="sc-breadcrumb-style sc-pt-135 sc-pb-110">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="sc-slider-content p-z-idex">
-                        <div class="sc-slider-subtitle">Home - {{ @$singleJob->name }}</div>
-                        <h1 class="slider-title white-color sc-mb-25 sc-sm-mb-15">Job Details</h1>
-                    </div>
-                </div>
-            </div>
+    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
+        <div class="auto-container">
+            <h1>Job Details</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="{{route('job.list')}}">Jobs</a></li>
+                <li>{{ @$singleJob->name }}</li>
+            </ul>
         </div>
-    </div>
+    </section>
 
-    <div class="sc-project-pages-area sc-pt-100 sc-md-pt-75 sc-pb-160 sc-md-pb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="sc-project-content-area">
-                        <div class="sc-project-details-inner">
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!--Sidebar Side-->
+                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                    @include('frontend.pages.jobs.sidebar')
+                </div>
+
+                <!--Content Side-->
+                <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                    <div class="blog-single">
+                        <div class="inner-box">
                             @if(@$singleJob->title)
-                            <h2 class="title sc-mb-25">{{@$singleJob->title}}</h2>
+                                <h2 class="sc-mb-25">{{@$singleJob->title}}</h2>
                             @endif
-                            <div class="row sc-mb-40">
-                                <div class="col-lg-9">
-                                    <div class="sc-project-image">
-                                        <img src="{{ asset('/images/job/'.@$singleJob->image) }}" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="sc-project-inner-category sc-md-mt-60">
-                                        <div class="sc-inner-title">
-                                            <h3 class="cate-title white-color">{{ ucwords(@$singleJob->name) }}:</h3>
-                                        </div>
-                                        <div class="sc-inner-list">
-                                            <ul class="list-gap">
-                                                <li>
-                                                    <span>Expires on :</span>
-                                                    <h5 class="title white-color">{{date('M j, Y',strtotime(@$singleJob->end_date))}}</h5>
-                                                </li>
-                                                @if(@$singleJob->getJobCategories(@$singleJob->category_ids) !== 'N/A')
-                                                    <li>
-                                                        <span>Category</span>
-                                                        <h5 class="title white-color">{{ucwords(@$singleJob->getJobCategories($singleJob->category_ids))}}</h5>
-                                                    </li>
-                                                @endif
-                                                @if($singleJob->extra_company)
-                                                    <li>
-                                                        <span>Extra Company</span>
-                                                        <h5 class="title white-color">{{ucwords(@$singleJob->extra_company)}}</h5>
-                                                    </li>
-                                                @endif
-                                                @if($singleJob->min_qualification)
-                                                    <li>
-                                                        <span>Min. Qualification</span>
-                                                        <h5 class="title white-color">{{ucwords(@$singleJob->min_qualification)}}</h5>
-                                                    </li>
-                                                @endif
-                                                @if($singleJob->salary)
-                                                    <li>
-                                                        <span>Salary</span>
-                                                        <h5 class="title white-color">{{@$singleJob->salary}}</h5>
-                                                    </li>
-                                                @endif
-                                                @if($singleJob->required_number)
-                                                    <li>
-                                                        <span>Required Number</span>
-                                                        <h5 class="title white-color">{{@$singleJob->required_number}}</h5>
-                                                    </li>
-                                                @endif
-                                            </ul>
+                            <div class="gallery-block" style="margin-bottom: 0px;">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="{{ ($singleJob->image !== null) ? asset('/images/job/'.@$singleJob->image): asset('assets/frontend/images/oamama_thumb.png')}}" alt="" />
+                                        <!--Overlay Box-->
+                                        <div class="overlay-box">
+                                            <div class="overlay-inner">
+                                                <div class="content">
+                                                    <a href="{{ ($singleJob->image !== null) ? asset('/images/job/'.@$singleJob->image): asset('assets/frontend/images/oamama_thumb.png')}}" data-fancybox="gallery-images-1" data-caption="" class="link">
+                                                        <span class="icon fa fa-search"></span></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="sc-project-text">
-                                <div class="des sc-mb-25 sc-details-check-text custom-description">
-                                    {!! $singleJob->description !!}
-                                </div>
-                                <div class="sc-blog-details-content-area">
-                                    <div class="sc-detaile-tags-list d-flex align-items-center justify-content-between">
-                                    <div class="sc-detail-social">
-                                        <ul class="list-gap">
-                                            <li>
-                                                <a href="#"><i class="icon-facebook" onclick='fbShare("{{route('job.single',$singleJob->slug)}}")'></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="icon-twiter"  onclick='twitShare("{{route('job.single',$singleJob->slug)}}","{{ $singleJob->title }}")'></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fab fa-whatsapp" onclick='whatsappShare("{{route('job.single',$singleJob->slug)}}","{{ $singleJob->title }}")'></i></a>
+                            <div class="lower-content">
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        <ul class="post-meta clearfix">
+                                            <li><span class="icon fa fa-calendar"></span>
+                                                {{date('M j, Y',strtotime(@$singleJob->end_date))}}
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
+                                <h2>{{ ucwords(@$singleJob->name) }}</h2>
+                                <div class="row">
+                                    @if(@$singleJob->getJobCategories(@$singleJob->category_ids) !== 'N/A')
+                                        <div class="col-md-6">
+                                            <div class="feature-block-two style-two">
+                                                <div class="inner-box">
+                                                    <h3><a>Category</a></h3>
+                                                    <div class="text">{{ucwords(@$singleJob->getJobCategories($singleJob->category_ids))}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($singleJob->extra_company)
+                                        <div class="col-md-6">
+                                            <div class="feature-block-two style-two">
+                                                <div class="inner-box">
+                                                    <h3><a>Company</a></h3>
+                                                    <div class="text">{{ucwords(@$singleJob->extra_company)}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($singleJob->min_qualification)
+                                        <div class="col-md-6">
+                                            <div class="feature-block-two style-two">
+                                                <div class="inner-box">
+                                                    <h3><a>Min. Qualification</a></h3>
+                                                    <div class="text">{{ucwords(@$singleJob->min_qualification)}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($singleJob->min_qualification)
+                                        <div class="col-md-6">
+                                            <div class="feature-block-two style-two">
+                                                <div class="inner-box">
+                                                    <h3><a>Min. Qualification</a></h3>
+                                                    <div class="text">{{ucwords(@$singleJob->min_qualification)}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($singleJob->required_number)
+                                        <div class="col-md-6">
+                                            <div class="feature-block-two style-two">
+                                                <div class="inner-box">
+                                                    <h3><a>Required Number</a></h3>
+                                                    <div class="text">{{ucwords(@$singleJob->required_number)}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($singleJob->salary)
+                                        <div class="col-md-6">
+                                            <div class="feature-block-two style-two">
+                                                <div class="inner-box">
+                                                    <h3><a>Salary</a></h3>
+                                                    <div class="text">{{ucwords(@$singleJob->salary)}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </div>
+
+                                <div class="text custom-description">
+                                    {!! $singleJob->description !!}
+                                </div>
+                                <div class="post-share-options">
+                                    <div class="post-share-inner clearfix">
+                                        <ul class="pull-right info-links clearfix">
+                                            <li>
+                                                <a href="#"><i class="fa fa-facebook" onclick='fbShare("{{route('job.single',$singleJob->slug)}}")'></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-twitter"  onclick='twitShare("{{route('job.single',$singleJob->slug)}}","{{ $singleJob->title }}")'></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-whatsapp" onclick='whatsappShare("{{route('job.single',$singleJob->slug)}}","{{ $singleJob->title }}")'></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
-
 
 @endsection
 

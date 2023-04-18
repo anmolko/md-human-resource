@@ -3,15 +3,16 @@
 
 @section('content')
 
-    <section class="page-title" style="background-image: url({{asset('/images/background/6.jpg')}})">
+    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
         <div class="auto-container">
             <h1>Recent News</h1>
             <ul class="page-breadcrumb">
-                <li><a href="/">home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>Our Blog</li>
             </ul>
         </div>
     </section>
+
     <!--Sidebar Page Container-->
     <div class="sidebar-page-container">
         <div class="auto-container">
@@ -60,7 +61,7 @@
 
                     </div>
                 </div>
-
-            </div>
         </div>
+    </div>
+
 @endsection

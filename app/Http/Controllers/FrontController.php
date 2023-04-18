@@ -503,11 +503,12 @@ class FrontController extends Controller
     }
 
     public function blogCategories($slug){
+
         $bcategory = $this->bcategory->where('slug', $slug)->first();
         $catid = $bcategory->id;
         $cat_name = $bcategory->name;
         $allPosts = $this->blog->where('blog_category_id', $catid)->where('status','publish')->orderBy('created_at', 'DESC')->paginate(6);
-        $bcategories = $this->bcategory->get();
+        $bcategories = $this->bcategory->withCount('blogs')->having('blogs_count', '>', 0)->get();
         $latestPosts = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->take(3)->get();
         return view('frontend.pages.blogs.category',compact('allPosts','cat_name','latestPosts','bcategories'));
     }
