@@ -541,32 +541,32 @@
 
     @if(@$setting_data->grievance_heading)
         <section class="fluid-section-two">
-        <div class="outer-container clearfix">
+            <div class="outer-container clearfix">
 
-            <!--Image Column-->
-            <div class="image-column" style="">
-                <iframe src="{{@$setting_data->google_map}}" style="border:0;width: 100%;height: 100%;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-
-            <!--Content Column-->
-            <div class="content-column">
-                <div class="inner-column">
-                    <!--Sec Title-->
-                    <div class="sec-title light" style="margin-bottom: 25px;">
-                        <div class="title-text">MD Human Resource</div>
-                        <h2>{{@$setting_data->grievance_heading}}</h2>
-                    </div>
-
-                    <!-- Support Form -->
-                    <div class="support-form light-description mb-3">
-                        {{ ucfirst(@$setting_data->grievance_description) }}
-                    </div>
-                    <a href="#" class="theme-btn btn-style-five mt-2">Who We Are</a>
+                <!--Image Column-->
+                <div class="image-column" style="">
+                    <iframe src="{{@$setting_data->google_map}}" style="border:0;width: 100%;height: 100%;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-            </div>
 
-        </div>
-    </section>
+                <!--Content Column-->
+                <div class="content-column">
+                    <div class="inner-column">
+                        <!--Sec Title-->
+                        <div class="sec-title light" style="margin-bottom: 25px;">
+                            <div class="title-text">MD Human Resource</div>
+                            <h2>{{@$setting_data->grievance_heading}}</h2>
+                        </div>
+
+                        <!-- Support Form -->
+                        <div class="support-form light-description mb-3">
+                            {{ ucfirst(@$setting_data->grievance_description) }}
+                        </div>
+                        <a href="{{route('contact')}}" class="theme-btn btn-style-five mt-2">Reach Out</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     @endif
 
     @if(count($latestPosts) > 0)

@@ -181,11 +181,11 @@ if (!function_exists('get_icons')) {
     function get_icons($index){
         $icon   = '';
         if($index == 0){
-            $icon = 'icon-bussness2';
+            $icon = 'flaticon-graph';
         }else if($index == 1){
-            $icon = 'icon-expericence';
+            $icon = 'flaticon-analysis';
         }else if($index == 2){
-            $icon = 'icon-startup';
+            $icon = 'flaticon-sports-and-competition';
         }else{
             $icon = 'icon-happy';
         }
@@ -202,23 +202,23 @@ if (!function_exists('get_solution_icons')) {
     function get_solution_icons($index){
         $icon   = '';
         if($index == 0){
-            $icon = 'icon-bussness2';
+            $icon = 'flaticon-worker';
         }else if($index == 1){
-            $icon = 'icon-startup';
+            $icon = 'flaticon-diamond';
         }else if($index == 2){
-            $icon = 'icon-research';
+            $icon = 'flaticon-mission';
         }else if($index == 3){
-            $icon = 'icon-risk';
+            $icon = 'flaticon-analytics';
         }else if($index == 4){
-            $icon = 'icon-human';
+            $icon = 'flaticon-pie-graphic';
         }else if($index == 5){
-            $icon = 'icon-complete';
+            $icon = 'flaticon-line-graph';
         }else if($index == 6){
-            $icon = 'icon-artifical';
+            $icon = 'flaticon-sports-and-competition';
         }else if($index == 7){
-            $icon = 'icon-happy';
+            $icon = 'flaticon-analysis';
         }else{
-            $icon = 'icon-lifetime';
+            $icon = 'flaticon-graph-1';
         }
 
         return $icon;

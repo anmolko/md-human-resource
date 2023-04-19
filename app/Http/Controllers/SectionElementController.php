@@ -204,7 +204,7 @@ class SectionElementController extends Controller
                 $image = $request->file('image');
                 $name = uniqid() . '__background__' . $image->getClientOriginalName();
                 $path = base_path() . '/public/images/section_elements/bgimage_section/';
-                $moved = Image::make($image->getRealPath())->fit(905, 725)->orientate()->save($path . $name);
+                $moved = Image::make($image->getRealPath())->fit(550, 575)->orientate()->save($path . $name);
                 if ($moved) {
                     $data['image'] = $name;
                 }
@@ -287,7 +287,7 @@ class SectionElementController extends Controller
                     $path         = base_path().'/public/images/section_elements/list_1/';
                     $thumb_path   = base_path().'/public/images/section_elements/list_1/thumb/';
                     $moved        = Image::make($image->getRealPath())->fit(850, 450)->orientate()->save($path.$name);
-                    $thumb        = Image::make($image->getRealPath())->fit(310, 380)->orientate()->save($thumb_path.$thumb);
+                    $thumb        = Image::make($image->getRealPath())->fit(280, 280)->orientate()->save($thumb_path.$thumb);
                     if ($moved && $thumb){
                         $data['list_image']= $name;
                     }
@@ -372,7 +372,7 @@ class SectionElementController extends Controller
                 $image                = $request->file('image');
                 $name                 = uniqid().'_basic_'.$image->getClientOriginalName();
                 $path                 = base_path().'/public/images/section_elements/basic_section/';
-                $moved                = Image::make($image->getRealPath())->fit(900, 760)->orientate()->save($path.$name);
+                $moved                = Image::make($image->getRealPath())->fit(570, 655)->orientate()->save($path.$name);
                 if ($moved){
                     $basic->image = $name;
                     if (!empty($oldimage) && file_exists(public_path().'/images/section_elements/basic_section/'.$oldimage)){
@@ -419,7 +419,7 @@ class SectionElementController extends Controller
                 $image        = $request->file('image');
                 $name         = uniqid().'__background__'.$image->getClientOriginalName();
                 $path         = base_path().'/public/images/section_elements/bgimage_section/';
-                $moved        = Image::make($image->getRealPath())->fit(905, 725)->orientate()->save($path.$name);
+                $moved        = Image::make($image->getRealPath())->fit(550, 575)->orientate()->save($path.$name);
                 if ($moved){
                     $action->image = $name;
                     if (!empty($oldimage) && file_exists(public_path().'/images/section_elements/bgimage_section/'.$oldimage)){
@@ -558,7 +558,7 @@ class SectionElementController extends Controller
                         $path         = base_path().'/public/images/section_elements/list_1/';
                         $thumb_path   = base_path().'/public/images/section_elements/list_1/thumb/';
                         $moved        = Image::make($image->getRealPath())->fit(850, 450)->orientate()->save($path.$name);
-                        $thumb        = Image::make($image->getRealPath())->fit(310, 380)->orientate()->save($thumb_path.$thumb);
+                        $thumb        = Image::make($image->getRealPath())->fit(280, 280)->orientate()->save($thumb_path.$thumb);
                         if ($moved && $thumb){
                             $data['list_image']= $name;
                         }

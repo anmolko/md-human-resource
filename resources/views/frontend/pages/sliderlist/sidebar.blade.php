@@ -1,29 +1,26 @@
-<div class="sc-blog-widget-inner">
-    @if(!empty($slider_lists))
-        <div class="sc-blog-post sc-mb-30">
-            <div class="sc-blog-title sc-mb-20">
-                <h5 class="title"><i class="icon-line"></i> Recent List </h5>
+<aside class="sidebar">
+    <div class="sidebar-inner inner sticky-box">
+
+        <!--Popular Posts-->
+        <div class="sidebar-widget popular-posts">
+            <div class="sidebar-title">
+                <h2>Recent List</h2>
             </div>
             @foreach($slider_lists as $index => $latest)
-                <div class="sc-post-auother d-flex align-items-center">
-                    <div class="sc-auother-image sc-mr-20">
-                        <a href="{{url('/slider-list/'.$latest->subheading)}}">
-                            <img style="width: 90px;height: 90px;"
-                                 src="{{ asset('/images/section_elements/list_1/thumb/thumb_'.$latest->list_image) }}" />
-                        </a>
+                <article class="post">
+                    <figure class="post-thumb"><a href="{{url('/slider-list/'.$latest->subheading)}}">
+                            <img src="{{ asset('/images/section_elements/list_1/thumb/thumb_'.$latest->list_image) }}" alt=""></a>
+                    </figure>
+                    <div class="post-info">
+                        {{date('j M, Y',strtotime(@$latest->created_at))}}
                     </div>
-                    <div class="auother-text">
-                        <span class="date"><i class="icon-calender"></i>
-                            {{date('j M, Y',strtotime(@$latest->created_at))}}
-                        </span>
-                        <h5>
-                            <a class="title" href="{{url('/slider-list/'.$latest->subheading)}}">
-                                {{{ucwords(@$latest->list_header)}}}</a>
-                        </h5>
-                    </div>
-                </div>
+                    <div class="text"><a href="{{url('/slider-list/'.$latest->subheading)}}">
+                            {{{ucwords(@$latest->list_header)}}}
+                        </a></div>
+                </article>
             @endforeach
 
         </div>
-    @endif
-</div>
+
+    </div>
+</aside>

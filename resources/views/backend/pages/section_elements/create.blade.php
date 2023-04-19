@@ -163,7 +163,7 @@
                                             <div class="card-body">
                                                 <div class="form-group mb-3">
                                                     <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                    <input type="text" class="form-control" name="heading" value="{{@$basic_elements->heading}}" maxlength="45" required>
+                                                    <input type="text" class="form-control" name="heading" value="{{@$basic_elements->heading}}" maxlength="35" required>
                                                     <input type="hidden" class="form-control" value="{{$key}}" name="page_section_id" required>
                                                     <input type="hidden" class="form-control" value="{{$value}}" name="section_name" required>
                                                     <div class="invalid-feedback">
@@ -284,7 +284,7 @@
 
                                                  <div class="form-group mb-3">
                                                      <label>Description <span class="text-muted text-danger">*</span></label>
-                                                     <textarea class="form-control" maxlength="700" rows="10" name="description" id="mapeditor" required>{{@$map_descp->description}}</textarea>
+                                                     <textarea class="form-control" maxlength="880" rows="10" name="description" id="mapeditor" required>{{@$map_descp->description}}</textarea>
                                                      <div class="invalid-feedback">
                                                          Please enter the description.
                                                      </div>
@@ -333,7 +333,7 @@
                                              <div class="card-body">
                                                  <div class="form-group mb-3">
                                                      <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                     <input type="text" class="form-control" maxlength="38" name="heading" value="{{@$call1_elements->heading}}" required>
+                                                     <input type="text" class="form-control" maxlength="80" name="heading" value="{{@$call1_elements->heading}}" required>
                                                      <input type="hidden" class="form-control" value="{{$key}}" name="page_section_id" required>
                                                      <input type="hidden" class="form-control" value="{{$value}}" name="section_name" required>
                                                      <div class="invalid-feedback">
@@ -342,7 +342,7 @@
                                                  </div>
                                                  <div class="form-group mb-3">
                                                      <label>Sub Heading </label>
-                                                     <input type="text" class="form-control" maxlength="75" name="subheading" value="{{@$call1_elements->subheading}}">
+                                                     <input type="text" class="form-control" maxlength="180" name="subheading" value="{{@$call1_elements->subheading}}">
                                                      <div class="invalid-feedback">
                                                          Please enter the  call action sub heading.
                                                      </div>
@@ -409,7 +409,7 @@
                                                      </div>
                                                      <div class="form-group mb-3">
                                                          <label>Description </label>
-                                                         <textarea class="form-control" maxlength="1000" rows="12" name="description" >{{@$bgimage_elements->description}}</textarea>
+                                                         <textarea class="form-control" maxlength="1500" rows="12" name="description" >{{@$bgimage_elements->description}}</textarea>
                                                          <div class="invalid-feedback">
                                                              Please enter the description.
                                                          </div>
@@ -432,7 +432,7 @@
                                                                  id="background-image" onchange="loadbasicFile('background-image','current-backgroundss-img',event)" name="image" {{(@$bgimage_elements !=="")? "":"required"}}
                                                                  class="profile-foreground-img-file-input" >
 
-                                                         <figcaption class="figure-caption">Banner image for current background section. (SIZE: 905 x 725px)</figcaption>
+                                                         <figcaption class="figure-caption">Banner image for current background section. (SIZE: 550 x 575px)</figcaption>
                                                          <div class="invalid-feedback" >
                                                              Please select a image.
                                                          </div>
@@ -479,7 +479,7 @@
                                                  </div>
                                                  <div class="form-group mb-3">
                                                      <label>Subheading</label>
-                                                     <input type="text" maxlength="35" class="form-control" value="{{@$flash_elements[0]->subheading}}" name="subheading[]">
+                                                     <input type="text" maxlength="40" class="form-control" value="{{@$flash_elements[0]->subheading}}" name="subheading[]">
                                                      <div class="invalid-feedback">
                                                          Please enter the button text.
                                                      </div>
@@ -508,7 +508,7 @@
                                                                      <input type="hidden" class="form-control" value="{{$key}}" name="page_section_id" required>
                                                                      <input type="hidden" class="form-control" value="{{@$flash_elements[0]->id}}" name="id[]">
                                                                      <input type="hidden" class="form-control" value="{{$value}}" name="section_name" required>
-                                                                     <input type="text" class="form-control" maxlength="15" name="list_header[]" value="{{@$flash_elements[0]->list_header}}" required>
+                                                                     <input type="text" class="form-control" maxlength="35" name="list_header[]" value="{{@$flash_elements[0]->list_header}}" required>
                                                                      <div class="invalid-feedback">
                                                                          Please enter the card 1 heading.
                                                                      </div>
@@ -540,7 +540,7 @@
                                                                  <div class="form-group mb-3">
                                                                      <label>Heading <span class="text-muted text-danger">*</span></label>
                                                                      <input type="hidden" class="form-control" value="{{@$flash_elements[1]->id}}" name="id[]">
-                                                                     <input type="text" class="form-control" maxlength="15" name="list_header[]" value="{{@$flash_elements[1]->list_header}}" required>
+                                                                     <input type="text" class="form-control" maxlength="35" name="list_header[]" value="{{@$flash_elements[1]->list_header}}" required>
                                                                      <div class="invalid-feedback">
                                                                          Please enter the card 1 heading.
                                                                      </div>
@@ -573,7 +573,7 @@
                                                                  <div class="form-group mb-3">
                                                                      <label>Heading <span class="text-muted text-danger">*</span></label>
                                                                      <input type="hidden" class="form-control" value="{{@$flash_elements[2]->id}}" name="id[]">
-                                                                     <input type="text" class="form-control" maxlength="15" name="list_header[]" value="{{@$flash_elements[2]->list_header}}" required>
+                                                                     <input type="text" class="form-control" maxlength="35" name="list_header[]" value="{{@$flash_elements[2]->list_header}}" required>
                                                                      <div class="invalid-feedback">
                                                                          Please enter the card 3 heading.
                                                                      </div>
@@ -769,14 +769,14 @@
                                                  <div class="card-body">
                                                      <div class="form-group mb-3">
                                                          <label>Heading <span class="text-muted text-danger">*</span></label>
-                                                         <input type="text" class="form-control" name="heading[]" value="{{@$slider_list_elements[0]->heading}}" required>
+                                                         <input type="text" class="form-control" maxlength="25" name="heading[]" value="{{@$slider_list_elements[0]->heading}}" required>
                                                          <div class="invalid-feedback">
                                                              Please enter the heading.
                                                          </div>
                                                      </div>
                                                      <div class="form-group mb-3">
-                                                         <label>Sub Heading <span class="text-muted text-danger">*</span></label>
-                                                         <input type="text" class="form-control" name="description[]" value="{{@$slider_list_elements[0]->description}}" required>
+                                                         <label>Small Description <span class="text-muted text-danger">*</span></label>
+                                                         <input type="text" maxlength="250" class="form-control" name="description[]" value="{{@$slider_list_elements[0]->description}}" required>
                                                          <div class="invalid-feedback">
                                                              Please enter the sub heading.
                                                          </div>
@@ -807,7 +807,7 @@
                                                                      <input type="hidden" class="form-control" value="{{$value}}"  name="section_name" required>
                                                                      <input type="hidden" class="form-control" value="{{$list_3}}" name="list_number_3" required>
                                                                      <input type="hidden" class="form-control" value="{{@$slider_list_elements[$i-1]->id}}" name="id[]">
-                                                                     <input type="text" class="form-control" name="list_header[]" id="slider_title_{{$i-1}}" onclick="slugMaker('slider_title_{{$i-1}}','slider_slug_{{$i-1}}')" value="{{@$slider_list_elements[$i-1]->list_header}}"  required>
+                                                                     <input type="text" class="form-control" maxlength="45" name="list_header[]" id="slider_title_{{$i-1}}" onclick="slugMaker('slider_title_{{$i-1}}','slider_slug_{{$i-1}}')" value="{{@$slider_list_elements[$i-1]->list_header}}"  required>
                                                                      <div class="invalid-feedback">
                                                                          Please enter the heading.
                                                                      </div>

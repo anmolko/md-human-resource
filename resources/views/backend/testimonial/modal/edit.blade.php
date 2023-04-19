@@ -42,7 +42,7 @@
                                         id="work-foreground-img-file-update" onchange="loadbasicFile('work-foreground-img-file-update','current-update-img',event)" name="image"
                                         class="work-foreground-img-file-update" >
 
-                                <figcaption class="figure-caption">Select your related testimonial image (100 x 100px).</figcaption>
+                                <figcaption class="figure-caption">Select your related testimonial image (320 x 280px).</figcaption>
                                 <div class="invalid-feedback" >
                                     Please select a image.
                                 </div>
