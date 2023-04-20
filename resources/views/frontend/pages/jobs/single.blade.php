@@ -50,12 +50,12 @@
                             <div class="gallery-block" style="margin-bottom: 0px;">
                                 <div class="inner-box">
                                     <div class="image">
-                                        <img src="{{ ($singleJob->image !== null) ? asset('/images/job/'.@$singleJob->image): asset('assets/frontend/images/oamama_thumb.png')}}" alt="" />
+                                        <img src="{{ ($singleJob->image !== null) ? asset('/images/job/'.@$singleJob->image): asset('assets/frontend/images/md_human.png')}}" alt="" />
                                         <!--Overlay Box-->
                                         <div class="overlay-box">
                                             <div class="overlay-inner">
                                                 <div class="content">
-                                                    <a href="{{ ($singleJob->image !== null) ? asset('/images/job/'.@$singleJob->image): asset('assets/frontend/images/oamama_thumb.png')}}" data-fancybox="gallery-images-1" data-caption="" class="link">
+                                                    <a href="{{ ($singleJob->image !== null) ? asset('/images/job/'.@$singleJob->image): asset('assets/frontend/images/md_human.png')}}" data-fancybox="gallery-images-1" data-caption="" class="link">
                                                         <span class="icon fa fa-search"></span></a>
                                                 </div>
                                             </div>

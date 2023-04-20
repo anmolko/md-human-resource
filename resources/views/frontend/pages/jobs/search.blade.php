@@ -33,7 +33,7 @@
                         <div class="gallery-block col-lg-4 col-md-4 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img src="{{ ($job->image !== null) ? asset('/images/job/thumb/thumb_'.@$job->image): asset('assets/frontend/images/oamama_thumb.png')}}" alt="" />
+                                    <img src="{{ ($job->image !== null) ? asset('/images/job/thumb/thumb_'.@$job->image): asset('assets/frontend/images/md_human.png')}}" alt="" />
                                     <!--Overlay Box-->
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
@@ -41,7 +41,7 @@
                                                 <a href="{{route('job.single',@$job->slug)}}" class="link">
                                                     <span class="icon fa fa-link" style="margin-top: 15px;"></span>
                                                 </a>
-                                                <a href="{{ ($job->image !== null) ? asset('/images/job/'.@$job->image): asset('assets/frontend/images/oamama_thumb.png')}}" data-fancybox="gallery-images-1" data-caption="" class="link">
+                                                <a href="{{ ($job->image !== null) ? asset('/images/job/'.@$job->image): asset('assets/frontend/images/md_human.png')}}" data-fancybox="gallery-images-1" data-caption="" class="link">
                                                     <span class="icon fa fa-search" style="margin-top: 15px;"></span></a>
                                             </div>
                                         </div>
