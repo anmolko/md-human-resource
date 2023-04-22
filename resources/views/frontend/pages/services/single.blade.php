@@ -20,10 +20,10 @@
     </style>
 @endsection
 @section('seo')
-    <title>{{ucfirst(@$singleService->title)}} | @if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource @endif </title>
+    <title>{{ucfirst(@$singleService->title)}} | {{ucwords(@$setting_data->website_name ?? 'MD Human resource')}}   </title>
     <meta name='description' itemprop='description'  content='{{ucfirst(@$singleService->meta_description)}}' />
     <meta name='keywords' content='{{ucfirst(@$singleService->meta_tags)}}' />
-    <meta property='article:published_time' content='<?php if(@$singleService->updated_at !=''){?>{{@$singleService->updated_at}} <?php }else {?> {{@$singleService->created_at}} <?php }?>' />
+    <meta property='article:published_time' content='{{@$singleService->updated_at ?? @$singleService->created_at}}' />
     <meta property='article:section' content='article' />
     <meta property="og:description" content="{{ucfirst(@$singleService->meta_description)}}" />
     <meta property="og:title" content="{{ucfirst(@$singleService->meta_title)}}" />
@@ -31,70 +31,78 @@
     <meta property="og:type" content="Coperation" />
     <meta property="og:locale" content="en-us" />
     <meta property="og:locale:alternate"  content="en-us" />
-    <meta property="og:site_name" content="@if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource @endif" />
-    <meta property="og:image" content="<?php if(@$singleService->banner_image){?>{{asset('/images/service/'.@$singleService->banner_image)}}<?php }?>" />
-    <meta property="og:image:url" content="<?php if(@$singleService->banner_image){?>{{asset('/images/service/'.@$singleService->banner_image)}}<?php }?>" />
+    <meta property="og:site_name" content="{{ucwords(@$setting_data->website_name ?? 'MD Human resource')}} " />
+    <meta property="og:image" content="{{asset('/images/service/'.@$singleService->banner_image)}}" />
+    <meta property="og:image:url" content="{{asset('/images/service/'.@$singleService->banner_image)}}" />
     <meta property="og:image:size" content="300" />
 @endsection
 
 @section('content')
 
-
-    <div class="sc-breadcrumb-style sc-pt-135 sc-pb-110">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="sc-slider-content p-z-idex">
-                        <div class="sc-slider-subtitle">Home - Our Services</div>
-                        <h1 class="slider-title white-color sc-mb-25 sc-sm-mb-15">Service Details</h1>
-                    </div>
-                </div>
-            </div>
+    <section class="page-title" style="background-image: url({{asset('/images/background/6.jpg')}})">
+        <div class="auto-container">
+            <h1>Service Details</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="{{route('service.frontend')}}">Service List</a></li>
+                <li>{{@$singleService->title}}</li>
+            </ul>
         </div>
-    </div>
+    </section>
 
-    <div class="sc-blog-section-area sc-blog-section-two sc-pt-100 sc-md-pt-80 sc-pb-170 sc-md-pb-150">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="sc-blog-details-content-area">
-                        <div class="sc-blog-item sc-mb-30">
-                            <img src="{{asset('/images/service/'.@$singleService->banner_image)}}" alt="Blog" />
-                            <div class="sc-blog-date-box">
-                                <div class="sc-date-box">
-                                    <h4 class="title">{{date('d', strtotime($singleService->created_at))}}</h4>
-                                    <span class="sub-title">{{date('M', strtotime($singleService->created_at))}}</span>
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!--Sidebar Side-->
+                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                    @include('frontend.pages.blogs.sidebar')
+                </div>
+
+                <!--Content Side-->
+                <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                    <div class="blog-single">
+                        <div class="inner-box">
+                            <div class="image">
+                                <img src="{{asset('/images/service/'.@$singleService->banner_image)}}" alt="" />
+                            </div>
+                            <div class="lower-content">
+                                <div class="clearfix">
+                                    <div class="pull-left">
+                                        <ul class="post-meta clearfix">
+                                            <li><span class="icon fa fa-calendar"></span> {{date('j M, Y',strtotime(@$singleService->created_at))}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <h2>{{ucwords(@$singleService->title)}}</h2>
+                                <div class="text">
+                                    {!! $singleService->description !!}
+                                </div>
+                                <div class="post-share-options">
+                                    <div class="post-share-inner clearfix">
+                                        <ul class="pull-right info-links clearfix">
+                                            <li>
+                                                <a href="#"><i class="fa fa-facebook" onclick='fbShare("{{route('service.single',$singleService->slug)}}")'></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-twitter"  onclick='twitShare("{{route('service.single',$singleService->slug)}}","{{ $singleService->title }}")'></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-whatsapp" onclick='whatsappShare("{{route('service.single',$singleService->slug)}}","{{ $singleService->title }}")'></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <h2 class="detail-title sc-pt-40 sc-mb-20">{{ucwords(@$singleService->title)}}</h2>
-                            <div class="des sc-mb-25 sc-details-check-text custom-description">
-                                {!! $singleService->description !!}
-                            </div>
+
                         </div>
-                        <div class="sc-detaile-tags-list d-flex align-items-center justify-content-between">
-                            <div class="sc-detail-social">
-                                <ul class="list-gap">
-                                    <li>
-                                        <a href="#"><i class="icon-facebook"  onclick='fbShare("{{route('service.single',$singleService->slug)}}")'></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="icon-twiter"  onclick='twitShare("{{route('service.single',$singleService->slug)}}","{{ $singleService->title }}")'></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fab fa-whatsapp"  onclick='whatsappShare("{{route('service.single',$singleService->slug)}}","{{ $singleService->title }}")'></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    @include('frontend.pages.services.sidebar')
-                </div>
+
             </div>
         </div>
     </div>
-
 @endsection
 @section('js')
 <script>

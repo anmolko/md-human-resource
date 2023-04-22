@@ -11,53 +11,54 @@
 @endsection
 @section('content')
 
-    <div class="sc-breadcrumb-style sc-pt-135 sc-pb-110">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="sc-slider-content p-z-idex">
-                        <div class="sc-slider-subtitle">Home - Our Services</div>
-                        <h1 class="slider-title white-color sc-mb-25 sc-sm-mb-15">Service List</h1>
+    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
+        <div class="auto-container">
+            <h1>Our Services</h1>
+            <ul class="page-breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li>Service List</li>
+            </ul>
+        </div>
+    </section>
+
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="sticky-container row clearfix">
+
+                <!--Sidebar Side-->
+                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                    @include('frontend.pages.services.sidebar')
+                </div>
+
+                <!--Content Side-->
+                <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                    <div class="row clearfix">
+                        @foreach(@$allservices as $index=>$service)
+                            <div class="news-block-five style-two col-lg-6 col-md-6 col-sm-12">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <a href="{{route('service.single',$service->slug)}}">
+                                            <img src="{{asset('/images/service/thumb/thumb_'.@$service->banner_image)}}" alt="" /></a>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h2><a href="{{route('service.single',$service->slug)}}">{{ucwords(@$service->title)}}</a></h2>
+                                        <a class="read-more" href="{{route('service.single',$service->slug)}}">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
+
+                    <!--Styled Pagination-->
+                    <div class="styled-pagination text-center">
+                        {{ $allservices->links('vendor.pagination.default') }}
+
+                    </div>
+                    <!--End Styled Pagination-->
+
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="sc-project-section-area sc-pt-120 sc-md-pt-80 sc-pb-160 sc-md-pb-100">
-        <div class="container sc-project-container">
-            @if(count($allservices) > 0)
-                <div class="row">
-                     @foreach(@$allservices as $index=>$service)
-                        <div class="col-md-4 mt-4">
-                            <div class="sc-project-item">
-                                <a href="{{route('service.single',$service->slug)}}"></a>
-                                <img src="{{asset('/images/service/thumb/thumb_'.@$service->banner_image)}}" alt="Image" />
-                                <div class="sc-project-content-box">
-                                    <div class="sc-project-icon">
-                                        <a href="{{route('service.single',$service->slug)}}"><i class="icon-sliuder-arrow2"></i></a>
-                                    </div>
-                                    <div class="sc-project-text">
-                                        <span class="sub-title">MD Human resource</span>
-                                        <h4><a class="title" href="{{route('service.single',$service->slug)}}">{{ucwords(@$service->title)}}</a></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     @endforeach
-                </div>
-            @else
-                <div id="sc-page-error" class="sc-page-error">
-                    <div class="error-text">
-                        <h1 class="error-code sc-mb-30">404</h1>
-                        <h3 class="error-message sc-mb-30">Service Not Found</h3>
-                        <div class="sc-error-btn">
-                            <a class="sc-primary-btn" href="/">Back to Homepage </a>
-                        </div>
-                    </div>
-                </div>
-            @endif
-        </div>
-    </div>
-
 @endsection

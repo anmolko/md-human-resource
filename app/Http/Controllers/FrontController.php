@@ -325,78 +325,13 @@ class FrontController extends Controller
     public function service(){
         $allservices = $this->service->paginate(6);
 
-        $latestServices = $this->service->orderBy('created_at', 'DESC')->take(3)->get();
+        $latestServices = $this->service->orderBy('created_at', 'DESC')->take(4)->get();
 
         $latestPosts = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->take(3)->get();
 
         return view('frontend.pages.services.index',compact('allservices','latestPosts','latestServices'));
     }
 
-
-     public function career(){
-        $allcareers = $this->career->where('status','active')->get();
-        return view('frontend.pages.careers.index',compact('allcareers'));
-    }
-
-
-    public function careerStore(Request $request)
-    {
-
-        $data = [
-            'career_id'        => $request->input('career_id'),
-            'name'        => $request->input('name'),
-            'email'       => $request->input('email'),
-            'phone'       => $request->input('phone'),
-            'address'     => $request->input('address'),
-            'message'     => $request->input('message'),
-        ];
-        if(!empty($request->file('attachcv'))){
-            $image          = $request->file('attachcv');
-            $name           = uniqid().'_'.$request->input('name').'_career_cv_'.$image->getClientOriginalName();
-            $career_path    = public_path('/images/career');
-
-            if (!is_dir($career_path)) {
-                mkdir($career_path, 0777);
-            }
-            $path           = base_path().'/public/images/career/';
-            $moved          = $image->move($path, $name);
-
-            if ($moved){
-                $data['attachcv']=$name;
-            }
-        }
-
-        $status = $this->apply_job->create($data);
-
-        // $theme_data = Setting::first();
-        //     $mail_data = array(
-        //         'fullname'        =>$request->input('name'),
-        //         'message'        =>$request->input('msg'),
-        //         'email'        =>$request->input('email'),
-        //         'address'        =>$request->input('address'),
-        //         'site_email'        =>ucwords($theme_data->email),
-        //         'site_name'        =>ucwords($theme_data->website_name),
-        //         'phone'        =>ucwords($theme_data->phone),
-        //         'logo'        =>ucwords($theme_data->logo),
-        //     );
-//             Mail::to($theme_data->email)->send(new ContactDetail($mail_data));
-
-            if($status){
-                $confirmed = "success";
-                $career    = Career::find($request->input('career_id'));
-                foreach (User::where('user_type','admin')->get() as $user){
-                    Notification::send($user, new NewCareerNotification($career,$status->id,$status->name));
-                }
-                return response()->json($confirmed);
-            }
-            else{
-                $confirmed = "error";
-                return response()->json($confirmed);
-            }
-
-
-
-    }
 
     public function contact()
     {
