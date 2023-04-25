@@ -401,8 +401,8 @@
                                                      </div>
 
                                                      <div class="form-group mb-3">
-                                                         <label>Subheading <span class="text-muted text-danger">*</span></label>
-                                                         <input type="text" maxlength="35" class="form-control" name="subheading" value="{{@$bgimage_elements->subheading}}" required>
+                                                         <label>Subheading </label>
+                                                         <input type="text" maxlength="35" class="form-control" name="subheading" value="{{@$bgimage_elements->subheading}}">
                                                          <div class="invalid-feedback">
                                                              Please write the subheading.
                                                          </div>
@@ -637,7 +637,7 @@
                                                      <label>Description <span class="text-muted text-danger">*</span></label>
                                                      <input type="hidden" class="form-control" value="{{$key}}" name="page_section_id" required>
                                                      <input type="hidden" class="form-control" value="{{$value}}" name="section_name" required>
-                                                     <textarea class="form-control" rows="6" name="description" defaultid="header_descp_editor" id="task-textarea" required>{{@$header_descp_elements->description}}</textarea>
+                                                     <textarea class="form-control" rows="6" name="description" id="task-textarea" required>{{@$header_descp_elements->description}}</textarea>
                                                      <div class="invalid-feedback">
                                                          Please write the short description for section.
                                                      </div>
@@ -1041,8 +1041,7 @@
 @endsection
 
 @section('js')
-{{--    <!-- <script src="{{asset('assets/backend/plugins/ckeditor/ckeditor.js')}}"></script> -->--}}
-{{--    @include('backend.ckeditor')--}}
+   <script src="{{asset('assets/backend/plugins/ckeditor/ckeditor.js')}}"></script>
     <script src="{{asset('assets/backend/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js')}}"></script>
     <script src="{{asset('assets/backend/plugins/dropzone/dropzone.js')}}"></script>
     <script src="{{asset('assets/backend/plugins/dropzone/dropzone.config.js')}}"></script>
@@ -1216,11 +1215,16 @@
 
         });
 
-
         $(document).ready(function () {
-            if(section_list.includes("simple_header_and_description")){
-                createEditor('task-textarea');
-            }
+
+            CKEDITOR.replace('task-textarea',{
+                allowedContent: true
+            });
+
+
+            // if(section_list.includes("simple_header_and_description")){
+            //     createEditor('task-textarea');
+            // }
             if(section_list.includes("map_and_description")){
                 createEditor('mapeditor');
             }
@@ -1315,6 +1319,9 @@
             $("#header-descp-form").submit(function(event){
                 event.preventDefault(); //prevent default action
                 if (!this.checkValidity()) { return false;}
+
+                var editor_data = CKEDITOR.instances['task-textarea'].getData();
+                $('#task-textarea').text(editor_data);
 
                 var post_url       = $(this).attr("action"); //get form action url
                 var request_method = $(this).attr("method"); //get form GET/POST method

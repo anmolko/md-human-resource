@@ -14,7 +14,7 @@
 @section('content')
     <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
         <div class="auto-container">
-            <h1>Page</h1>
+            <h1>{{ucwords(@$page_detail->name)}}</h1>
             <ul class="page-breadcrumb">
                 <li><a href="/">home</a></li>
                 <li>{{ucwords(@$page_detail->name)}}</li>
@@ -33,10 +33,10 @@
                             <div class="inner-column">
                                 <div class="content">
                                     <div class="sec-title" style="margin-bottom: 20px;">
-                                        <div class="title-text">{{$basic_elements->subheading??'MD Human resource'}}</div>
-                                        <h2>{{$basic_elements->heading ?? ''}}</h2>
+                                        <div class="title-text">{{@$basic_elements->subheading??'MD Human resource'}}</div>
+                                        <h2>{{@$basic_elements->heading ?? ''}}</h2>
                                     </div>
-                                    <div class="text dynamic-text" style="font-size: 16px;">
+                                    <div class="text dynamic-text" style="font-size: 16px;padding-left: 0px;">
                                         {!! @$basic_elements->description !!}
                                     </div>
                                     @if(@$basic_elements->button_link)
@@ -222,9 +222,9 @@
         @if($value == "gallery_section")
             <section class="portfolio-page-section">
                 <div class="auto-container">
-                    @if($heading!==null)
+                    @if(@$heading!==null)
                         <div class="sec-title centered" style="margin-bottom: 25px;">
-                            <div class="title-text">{{$subheading ?? ''}}</div>
+                            <div class="title-text">{{@$subheading ?? ''}}</div>
                             <h2>{{@$heading}}</h2>
                         </div>
                     @endif
