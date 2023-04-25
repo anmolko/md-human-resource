@@ -140,7 +140,7 @@
         @if($value == "simple_header_and_description")
             <div class="page-container header-description ">
                 <div class="container">
-                    @if($header_descp_elements->heading)
+                    @if(@$header_descp_elements->heading!==null)
                         <div class="sec-title centered mt-5" style="margin-bottom: 25px;">
                             <div class="title-text">{{@$header_descp_elements->subheading ?? ''}}</div>
                             <h2>{{@$header_descp_elements->heading}}</h2>

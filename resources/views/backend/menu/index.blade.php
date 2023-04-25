@@ -557,7 +557,7 @@
             onDrop: function ($item, container, _super) {
                 var data = group.sortable("serialize").get();
                 var jsonString = JSON.stringify(data, null, ' ');
-                $('#serialize_output').text(jsonString);
+                $('#serialize_output').text('').text(jsonString);
                 //for animation
                 var $clonedItem = $('<li/>').css({height: 0});
                 $item.before($clonedItem);
@@ -602,7 +602,7 @@
         $(document).ready(function () {
             var $data = group.sortable("serialize").get();
             var jsonString = JSON.stringify($data, null, ' ');
-            $('#serialize_output').text(jsonString);
+            $('#serialize_output').text('').text(jsonString);
         });
 
         $('#select-all-pages').click(function(event) {

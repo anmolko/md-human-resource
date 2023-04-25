@@ -168,7 +168,7 @@
                                                 </li>
                                             @else
                                                 <li>
-                                                    <a href="{{get_menu_url($nav->type, $nav)}}" target="{{@$nav->target ? '_blank':''}}">
+                                                    <a href="{{get_menu_url(@$nav->type, @$nav)}}" target="{{@$nav->target ? '_blank':''}}">
                                                         {{ @$nav->name ?? @$nav->title ??''}}
                                                     </a>
                                                 </li>
@@ -263,7 +263,7 @@
                                     @endforeach
                                 @else
                                     <li>
-                                        <a href="{{get_menu_url($nav->type, $nav)}}" target="{{@$nav->target ? '_blank':''}}">
+                                        <a href="{{get_menu_url(@$nav->type, @$nav)}}" target="{{@$nav->target ? '_blank':''}}">
                                             {{ @$nav->name ?? @$nav->title ??''}}
                                         </a>
                                     </li>
