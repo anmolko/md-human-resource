@@ -387,7 +387,7 @@
                             </div>
                             <h3><a>{{@$recruitment->title}}</a></h3>
                             <div class="text">
-                                {{@$recruitment->icon_description}}
+                                {!! str_replace(', ', '<br/>- ', '- '.@$recruitment->icon_description) !!}
                             </div>
                         </div>
                     </div>

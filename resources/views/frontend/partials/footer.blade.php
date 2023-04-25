@@ -53,16 +53,18 @@
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget links-widget">
                                 <h2>Quick Links</h2>
-                                <ul class="footer-link">
-                                    @foreach($footer_nav_data1 as $nav)
-                                        @if(empty($nav->children[0]))
-                                            <li><a href="{{get_menu_url($nav->type, $nav)}}" target="{{@$nav->target ? '_blank':''}}">
-                                                    {{ @$nav->name ?? @$nav->title ?? ''}}
-                                                </a>
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                </ul>
+                                @if($footer_nav_data1!==null)
+                                    <ul class="footer-link">
+                                        @foreach(@$footer_nav_data1 as $nav)
+                                            @if(empty(@$nav->children[0]))
+                                                <li><a href="{{get_menu_url(@$nav->type, @$nav)}}" target="{{@$nav->target ? '_blank':''}}">
+                                                        {{ @$nav->name ?? @$nav->title ?? ''}}
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </div>
                         </div>
 
@@ -76,14 +78,14 @@
                         <!--Footer Column-->
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget posts-widget">
-                                <h2>Recent Posts</h2>
+                                <h2>Recent Jobs</h2>
 
 
                                 @foreach(@$footer_jobs as $index=>$job)
                                     <article class="post">
                                         <div class="text">
                                             <a href="{{route('job.single',@$job->slug)}}">
-                                                {{ ucfirst($job->name)}}
+                                                {{ ucfirst(@$job->name)}}
                                             </a>
                                         </div>
                                         <ul class="post-date">
