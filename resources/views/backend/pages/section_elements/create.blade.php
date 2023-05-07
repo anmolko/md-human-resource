@@ -1026,6 +1026,86 @@
                                     {!! Form::close() !!}
 
                                 @endif
+
+                             @if($value == 'recruitment_process')
+                                    @if(sizeof($recruitment_process) !== 0)
+                                        {!! Form::open(['route' => 'section-elements.tablistUpdate','method'=>'post','class'=>'needs-validation','id'=>'recruitment-form','novalidate'=>'','enctype'=>'multipart/form-data']) !!}
+                                    @else
+                                        {!! Form::open(['route' => 'section-elements.store','method'=>'post','class'=>'needs-validation','id'=>'recruitment-form','novalidate'=>'','enctype'=>'multipart/form-data']) !!}
+                                    @endif
+                                    <div id="recruitment-form-ajax">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card ctm-border-radius shadow-sm flex-fill">
+                                                    <div class="card-header">
+                                                        <h4 class="card-title mb-0">
+                                                            General details
+                                                        </h4>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="form-group mb-3">
+                                                            <label>Heading <span class="text-muted text-danger">*</span></label>
+                                                            <input type="text" class="form-control" maxlength="35" name="heading[]" value="{{@$accordian2_elements[0]->heading}}" required>
+                                                            <div class="invalid-feedback">
+                                                                Please enter the heading.
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-3">
+                                                            <label>Sub Heading <span class="text-muted text-danger">*</span></label>
+                                                            <input type="text" class="form-control" maxlength="15" name="subheading[]" value="{{@$accordian2_elements[0]->subheading}}" required>
+                                                            <div class="invalid-feedback">
+                                                                Please enter the sub heading.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion custom-accordionwithicon custom-accordion-border accordion-border-box accordion-success" id="accordionBordered5">
+                                            <input type="hidden" class="form-control" value="{{@$accordian2_elements}}" name="accordion2_elements">
+                                            @for ($i = 1; $i <=$list_2; $i++)
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header" id="accordian-heading-{{$i}}">
+                                                        <button class="accordion-button {{($i==1) ? '':'collapsed'}}" type="button" data-bs-toggle="collapse" data-bs-target="#accor_borderedExamplecollapse_{{$i}}" aria-expanded="{{($i==1) ? 'true':'false'}}" aria-controls="accor_borderedExamplecollapse_{{$i}}">
+                                                            Box {{$i}} details
+                                                        </button>
+                                                    </h2>
+                                                    <div id="accor_borderedExamplecollapse_{{$i}}" class="accordion-collapse collapse {{($i==1) ? 'show':''}} " aria-labelledby="accordian-heading-{{$i}}" data-bs-parent="#accordionBordered5">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group mb-3">
+                                                                        <label>Heading <span class="text-muted text-danger">*</span></label>
+                                                                        <input type="hidden" class="form-control" value="{{$key}}"    name="page_section_id" required>
+                                                                        <input type="hidden" class="form-control" value="{{$value}}"  name="section_name" required>
+                                                                        <input type="hidden" class="form-control" value="{{$list_2}}" name="list_number_2" required>
+                                                                        <input type="hidden" class="form-control" value="{{@$accordian2_elements[$i-1]->id}}" name="id[]">
+                                                                        <input type="text" class="form-control" name="list_header[]" value="{{@$accordian2_elements[$i-1]->list_header}}" required>
+                                                                        <div class="invalid-feedback">
+                                                                            Please enter the heading.
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group mb-3">
+                                                                        <label>Description </label>
+                                                                        <textarea class="form-control" rows="6" name="list_description[]" id="accordian_two_editor_{{$i}}">{{@$accordian2_elements[$i-1]->list_description}}</textarea>
+                                                                        <div class="invalid-feedback">
+                                                                            Please write the description.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endfor
+
+                                        </div>
+                                    </div>
+                                    <div class="text-center mt-3 mb-3" id="recruitment-form-button">
+                                        <button id="list2-button-submit" class="btn btn-success w-sm">{{(sizeof(@$recruitment_process) !== 0) ? "Update Details":"Add Details"}}</button>
+                                    </div>
+                                    {!! Form::close() !!}
+                                @endif
                             </div>
                             <?php $j++; ?>
                         @endforeach

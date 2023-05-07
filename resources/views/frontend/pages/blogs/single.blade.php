@@ -49,7 +49,7 @@
                                     <div class="pull-left">
                                         <ul class="post-meta clearfix">
                                             <li>{{@$singleBlog->category->name }}</li>
-                                            <li><span class="icon fa fa-calendar"></span> {{date('j M, Y',strtotime(@$latest->created_at))}}</li>
+                                            <li><span class="icon fa fa-calendar"></span> {{date('j M, Y',strtotime(@$singleBlog->created_at))}}</li>
                                         </ul>
                                     </div>
                                 </div>

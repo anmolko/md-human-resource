@@ -69,6 +69,7 @@ class SectionElementController extends Controller
         $slider_list_elements = "";
         $icon_title_elements = "";
         $process_elements = "";
+        $recruitment_process = "";
         foreach ($page_section as $section){
             $sections[$section->id] = $section->section_slug;
             if($section->section_slug == 'basic_section'){
@@ -105,6 +106,10 @@ class SectionElementController extends Controller
                 $accordian2_elements = SectionElement::with('section')
                     ->where('page_section_id', $section->id)
                     ->get();
+            } else if ($section->section_slug == 'recruitment_process'){
+                $recruitment_process = SectionElement::with('section')
+                    ->where('page_section_id', $section->id)
+                    ->get();
             }
             else if ($section->section_slug == 'gallery_section'){
                 $gallery_elements = SectionElement::with('section')
@@ -132,7 +137,7 @@ class SectionElementController extends Controller
         }
 
 
-        return view('backend.pages.section_elements.create',compact( 'page','sections','process_num','process_elements','map_descp','icon_title_elements','location_map','video_descp_elements','list_2','list_3','basic_elements','call1_elements','gallery2_elements','bgimage_elements','call2_elements','flash_elements','gallery_elements','header_descp_elements','accordian1_elements','accordian2_elements','slider_list_elements','contact_info_elements','id'));
+        return view('backend.pages.section_elements.create',compact( 'page','recruitment_process','sections','process_num','process_elements','map_descp','icon_title_elements','location_map','video_descp_elements','list_2','list_3','basic_elements','call1_elements','gallery2_elements','bgimage_elements','call2_elements','flash_elements','gallery_elements','header_descp_elements','accordian1_elements','accordian2_elements','slider_list_elements','contact_info_elements','id'));
     }
 
     /**

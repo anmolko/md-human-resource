@@ -245,43 +245,36 @@
 
                                 </div>
                             </div>
-{{--                            <div class="card shadow-none">--}}
-{{--                                <div class="card-header">--}}
-{{--                                    <h5 class="card-title text-primary mb-0">Simple Accordion Tab  </h5>--}}
-{{--                                </div>--}}
-{{--                                <div class="card-body">--}}
-{{--                                    <div class="row">--}}
-
-{{--                                        <div class="col-md-12 mb-2">--}}
-{{--                                            <div class="col-md-12">--}}
-{{--                                                <div class="form-group">--}}
-{{--                                                    <label>Select number of Tab List <span class="text-muted text-danger">*</span></label>--}}
-{{--                                                    <select class="form-control select" name="list_number_2" id="list_number_2">--}}
-{{--                                                        <option disabled>Select Number of Tab List</option>--}}
-{{--                                                        <option value="2" selected>Two</option>--}}
-{{--                                                        <option value="4">Four</option>--}}
-{{--                                                        <option value="6">Six</option>--}}
-{{--                                                        <option value="8">Eight</option>--}}
-{{--                                                        <option value="10">Ten</option>--}}
-{{--                                                    </select>--}}
-{{--                                                    <div class="invalid-feedback">--}}
-{{--                                                        Please enter the Accordion tab number.--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="col-md-12">--}}
-{{--                                            <label class="image-checkbox">--}}
-{{--                                                <img class="img-responsive" src="{{asset('assets/backend/img/page_sections/simple_accordian_tab2.png')}}" width="100%" />--}}
-{{--                                                <input type="checkbox" name="section[]" value="accordion_section_2" id="simple_accordian_tab2.png"/>--}}
-{{--                                                <i class="ri ri-check-line hidden"></i>--}}
-{{--                                            </label>--}}
-{{--                                            <span class="ctm-text-sm text-warning">* Can be used for multiple Q & A section such as FAQs.</span>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                            </div>--}}
+                            <div class="card shadow-none">
+                                <div class="card-header">
+                                    <h5 class="card-title text-primary mb-0">Recruitment Process</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group mb-3">
+                                                <label>Select number of Recruitment Process <span class="text-muted text-danger">*</span></label>
+                                                <select class="form-control select" name="recruitment_process_num" id="recruitment_process_num">
+                                                    <option disabled>Select Number </option>
+                                                    <option value="4" selected>Four</option>
+                                                    <option value="8">Eight</option>
+                                                    <option value="12">Twelve</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please enter the number of Recruitment Process.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label class="image-checkbox">
+                                                <img class="img-responsive" src="{{asset('assets/backend/img/page_sections/recruitment_process.png')}}" width="100%" />
+                                                <input type="checkbox" name="section[]" value="recruitment_process" id="recruitment_process.png"/>
+                                                <i class="ri ri-check-line hidden"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="card shadow-none">
                                 <div class="card-header">

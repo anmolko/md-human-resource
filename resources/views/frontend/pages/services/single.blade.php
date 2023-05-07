@@ -56,7 +56,7 @@
 
                 <!--Sidebar Side-->
                 <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
-                    @include('frontend.pages.blogs.sidebar')
+                    @include('frontend.pages.services.sidebar')
                 </div>
 
                 <!--Content Side-->

@@ -105,18 +105,7 @@
                                             </div>
                                         </div>
                                     @endif
-                                    @if($singleJob->min_qualification)
-                                        <div class="col-md-6">
-                                            <div class="feature-block-two style-two">
-                                                <div class="inner-box">
-                                                    <h3><a>Min. Qualification</a></h3>
-                                                    <div class="text">{{ucwords(@$singleJob->min_qualification)}}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endif
-                                    @if($singleJob->required_number)
-                                        <div class="col-md-6">
+                                        ->has('project')                                        <div class="col-md-6">
                                             <div class="feature-block-two style-two">
                                                 <div class="inner-box">
                                                     <h3><a>Required Number</a></h3>

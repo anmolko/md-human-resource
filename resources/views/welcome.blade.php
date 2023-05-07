@@ -373,29 +373,29 @@
 
     @if(@$recruitments[0]->heading)
         <section class="featured-section-two" style="background-color: #f9f8fc;">
-        <div class="auto-container">
-            <div class="sec-title centered">
-                <div class="title-text">{{@$recruitments[0]->description ?? 'The Work Flow'}}</div>
-                <h2>{{@$recruitments[0]->heading}}</h2>
-            </div>
-            <div class="row clearfix">
-                @foreach(@$recruitments as $index=>$recruitment)
-                    <div class="feature-block-four col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner-box wow fadeInUp" data-wow-delay="{{ ($index * 250 ) }}ms" data-wow-duration="1500ms">
-                            <div class="icon-box">
-                                <span>{{$index+1}}</span>
-                            </div>
-                            <h3><a>{{@$recruitment->title}}</a></h3>
-                            <div class="text">
-                                {!! str_replace(', ', '<br/>- ', '- '.@$recruitment->icon_description) !!}
+            <div class="auto-container">
+                <div class="sec-title centered">
+                    <div class="title-text">{{@$recruitments[0]->description ?? 'The Work Flow'}}</div>
+                    <h2>{{@$recruitments[0]->heading}}</h2>
+                </div>
+                <div class="row clearfix">
+                    @foreach(@$recruitments as $index=>$recruitment)
+                        <div class="feature-block-four col-lg-3 col-md-6 col-sm-12">
+                            <div class="inner-box wow fadeInUp" data-wow-delay="{{ ($index * 250 ) }}ms" data-wow-duration="1500ms">
+                                <div class="icon-box">
+                                    <span>{{$index+1}}</span>
+                                </div>
+                                <h3><a>{{@$recruitment->title}}</a></h3>
+                                <div class="text">
+                                    {!! str_replace(', ', '<br/>- ', '- '.@$recruitment->icon_description) !!}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
 
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
 
     @if(count($director) > 0)
@@ -435,31 +435,31 @@
 
     @if(count($clients) > 0)
         <section class="expert-section">
-        <div class="auto-container">
-            <!--Sec Title-->
-            <div class="sec-title centered">
-                <div class="title-text">MD resource</div>
-                <h2>Our Valuable Clients</h2>
-            </div>
-            <div class="row clearfix client-column">
-                <div class="experts-carousel owl-carousel owl-theme">
-                    @foreach($clients as $client)
-                        <div class="expert-block">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <img src="{{asset('/images/clients/'.@$client->image)}}" alt="" />
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="{{ $client->link ?? '#' }}" target="{{ ($client->link !== null) ? '_blank':'' }}">{{$client->name ?? ''}}</a></h3>
-                                    <div class="designation">{{ get_country($client->country) ?? ''}}</div>
+            <div class="auto-container">
+                <!--Sec Title-->
+                <div class="sec-title centered">
+                    <div class="title-text">MD resource</div>
+                    <h2>Our Valuable Clients</h2>
+                </div>
+                <div class="row clearfix client-column">
+                    <div class="experts-carousel owl-carousel owl-theme">
+                        @foreach($clients as $client)
+                            <div class="expert-block">
+                                <div class="inner-box">
+                                    <div class="image">
+                                        <img src="{{asset('/images/clients/'.@$client->image)}}" alt="" />
+                                    </div>
+                                    <div class="lower-content">
+                                        <h3><a href="{{ $client->link ?? '#' }}" target="{{ ($client->link !== null) ? '_blank':'' }}">{{$client->name ?? ''}}</a></h3>
+                                        <div class="designation">{{ get_country($client->country) ?? ''}}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endif
 
     @if(count($latestJobs) > 1)
@@ -500,7 +500,6 @@
     @endif
 
     @if(count($testimonials) > 0)
-
         <section class="testimonial-section pt-5">
             <div class="auto-container">
                 <!--Sec Title-->
@@ -536,7 +535,6 @@
                 </div>
             </div>
         </section>
-
     @endif
 
     @if(@$setting_data->grievance_heading)
@@ -571,36 +569,36 @@
 
     @if(count($latestPosts) > 0)
         <section class="news-section">
-        <div class="auto-container">
-            <!--Sec Title-->
-            <div class="sec-title">
-                <h2>Latest zemen News</h2>
-                <div class="title-text">Automate & Simplify The Whole Process</div>
-            </div>
-            <div class="row clearfix">
-                @foreach(@$latestPosts as $post)
-                    <div class="news-block-three col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="image">
-                            <a href="{{route('blog.single',$post->slug)}}"><img src="{{asset('/images/blog/'.@$post->image)}}" alt="" /></a>
-                        </div>
-                        <div class="lower-content">
-                            <ul class="post-info">
-                                <li>{{date('d M Y', strtotime($post->created_at))}}</li>
-                                <li>{{ucfirst(@$post->category->name)}}</li>
-                            </ul>
-                            <h3><a href="{{route('blog.single',$post->slug)}}">{{ucfirst($post->title)}}</a></h3>
-                            <div class="text">
-                                {!! elipsis($post->description) !!}
+            <div class="auto-container">
+                <!--Sec Title-->
+                <div class="sec-title">
+                    <h2>Latest zemen News</h2>
+                    <div class="title-text">Automate & Simplify The Whole Process</div>
+                </div>
+                <div class="row clearfix">
+                    @foreach(@$latestPosts as $post)
+                        <div class="news-block-three col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="image">
+                                <a href="{{route('blog.single',$post->slug)}}"><img src="{{asset('/images/blog/'.@$post->image)}}" alt="" /></a>
                             </div>
-                            <a class="read-more" href="{{route('blog.single',$post->slug)}}"><span class="fa fa-angle-right"></span> Read more</a>
+                            <div class="lower-content">
+                                <ul class="post-info">
+                                    <li>{{date('d M Y', strtotime($post->created_at))}}</li>
+                                    <li>{{ucfirst(@$post->category->name)}}</li>
+                                </ul>
+                                <h3><a href="{{route('blog.single',$post->slug)}}">{{ucfirst($post->title)}}</a></h3>
+                                <div class="text">
+                                    {!! elipsis($post->description) !!}
+                                </div>
+                                <a class="read-more" href="{{route('blog.single',$post->slug)}}"><span class="fa fa-angle-right"></span> Read more</a>
+                            </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
-                @endforeach
             </div>
-        </div>
-    </section>
+        </section>
     @endif
 @endsection
 
